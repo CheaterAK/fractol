@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 04:21:02 by akocabas          #+#    #+#             */
-/*   Updated: 2022/05/25 08:05:42 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/03 12:23:25 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	fract_init2(char *fract_name, t_fract *fract)
 		fract->zoom = 1;
 		fract->fract_type = tricorn;
 	}
-	if (!strcmp(fract_name, "Julia"))
+	else if (!strcmp(fract_name, "Julia"))
 	{
 		fract->angle = 0;
 		fract->max_iteration = 100;
@@ -54,9 +54,53 @@ void	fract_init(char *fract_name, t_fract *fract)
 		fract->mv_y = 0;
 		fract->zoom = 1;
 		fract->fract_type = burnungship;
+		fract->mini_fract1_type = julia;
+		fract->mini_fract2_type = mandelbrot;
+		fract->mini_fract3_type = tricorn;
 	}
 	else
 		fract_init2(fract_name, fract);
+}
+
+void	ft_init_prog(t_fract *fract)
+{
+	fract->prog = mlx_init();
+	fract->parent_window = mlx_new_window(fract->prog, 800, 600, "first_prog");
+	fract->img_size = 600;
+	fract->img.img = mlx_new_image(fract->prog, fract->img_size,
+			fract->img_size);
+	fract->img.addr = mlx_get_data_addr(fract->img.img, &fract->img.bpp,
+			&fract->img.line_len, &fract->img.endian);
+	fract->mini_fract_size = 200;
+	fract->mini_fract1.img = mlx_new_image(fract->prog, fract->mini_fract_size,
+			fract->mini_fract_size);
+	fract->mini_fract1.addr = mlx_get_data_addr(fract->mini_fract1.img,
+			&fract->mini_fract1.bpp, &fract->mini_fract1.line_len,
+			&fract->mini_fract1.endian);
+	fract->mini_fract2.img = mlx_new_image(fract->prog, fract->mini_fract_size,
+			fract->mini_fract_size);
+	fract->mini_fract2.addr = mlx_get_data_addr(fract->mini_fract2.img,
+			&fract->mini_fract2.bpp, &fract->mini_fract2.line_len,
+			&fract->mini_fract2.endian);
+	fract->mini_fract3.img = mlx_new_image(fract->prog, fract->mini_fract_size,
+			fract->mini_fract_size);
+	fract->mini_fract3.addr = mlx_get_data_addr(fract->mini_fract3.img,
+			&fract->mini_fract3.bpp, &fract->mini_fract3.line_len,
+			&fract->mini_fract3.endian);
+}
+
+int	ft_m_move(int x, int y, t_fract *fract)
+{
+	if ((x >= fract->img_size || x < 0) || y >= fract->img_size || y < 0)
+	{
+		return (0);
+	}
+	if (!fract->key_flag)
+		return (0);
+	fract->julia_x = (-1 + (double)x / 300) / fract->zoom;
+	fract->julia_y = (-1 + (double)y / 300) / fract->zoom;
+	ft_chk_px(fract);
+	return (1);
 }
 
 int	main(int ac, char *av[])
@@ -65,20 +109,15 @@ int	main(int ac, char *av[])
 
 	if (ac < 2)
 	{
-		printf("duzgun gir fractal giriniz. './fract help' komutunu deneyin");
+		printf("duzgun gir fractal giriniz. './fract -help' komutunu deneyin");
 		return (1);
 	}
-	fract.prog = mlx_init();
-	fract.parent_window = mlx_new_window(fract.prog, 600, 600, "first_prog");
-	fract.img.img = mlx_new_image(fract.prog, 600, 600);
-	fract.img.addr = mlx_get_data_addr(fract.img.img, &fract.img.bpp, \
-	&fract.img.line_len, &fract.img.endian);
+	ft_init_prog(&fract);
 	fract_init(av[1], &fract);
-	printf("\n\n%d\n\n", fract.max_iteration);
-	sleep(1);
 	ft_chk_px(&fract);
 	mlx_hook(fract.parent_window, 2, 0, keydown, &fract);
-	mlx_mouse_hook(fract.parent_window, mouse_hook, &fract);
-	printf("\n\n%d\n\n", fract.max_iteration);
+	mlx_hook(fract.parent_window, 4, 0, mouse_hook, &fract);
+	mlx_hook(fract.parent_window, 17, 0, ft_destroy_it, &fract);
+	mlx_hook(fract.parent_window, 6, 0, ft_m_move, &fract);
 	mlx_loop(fract.prog);
 }

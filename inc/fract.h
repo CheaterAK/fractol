@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 08:57:32 by akocabas          #+#    #+#             */
-/*   Updated: 2022/05/25 07:27:24 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/03 19:24:15 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,15 @@ enum {
 	key_left = 123,
 	key_right = 124,
 	key_esc = 53,
-	scroll_up = 5,
-	scroll_down = 3,
 	key_plus = 69,
 	key_minus = 78
+};
+enum {
+	left_click = 1,
+	right_click = 2,
+	middle_click = 3,
+	scroll_up = 5,
+	scroll_down = 4
 };
 
 typedef struct s_complex
@@ -67,18 +72,35 @@ typedef struct s_fract
 	double		mv_y;
 	double		zoom;
 	t_data		img;
+	t_data		mini_fract1;
+	t_data		mini_fract2;
+	t_data		mini_fract3;
 	void		*prog;
 	void		*parent_window;
 	int			fract_type;
+	int			mini_fract1_type;
+	int			mini_fract2_type;
+	int			mini_fract3_type;
 	double		angle;
+	int			color_shift;
+	int			img_size;
+	int			mini_fract_size;
+	double		julia_x;
+	double		julia_y;
+	int			key_flag;
 }	t_fract;
 
+int		ft_julia(t_fract *fract, int x, int y);
 int		ft_mandelbrot(t_fract *fract, int x, int y);
 int		ft_burningship(t_fract *fract, int x, int y);
 int		ft_tricorn(t_fract *fract, int x, int y);
-int		mouse_hook(int key, t_fract *fract);
+int		mouse_hook(int key, int x, int y, t_fract *fract);
 int		keydown(int key, t_fract *fract);
-void	draw_fract(t_fract *fract);
+void	draw_fract(t_fract *fract, int x, int y);
 void	ft_chk_px(t_fract *fract);
+int		ft_destroy_it(t_fract *fract);
+void	my_put_pixel(t_data *data, int x, int y, int color);
+int		color(int o, int r, int g, int b);
+
 
 #endif

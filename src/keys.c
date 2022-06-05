@@ -6,79 +6,111 @@
 /*   By: akocabas <akocabas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 04:29:26 by akocabas          #+#    #+#             */
-/*   Updated: 2022/05/25 08:13:52 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/05/28 13:04:48 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fract.h"
 #include "../minilibx_macos/mlx.h"
 
-void	ft_angle_zoom(t_fract *fract, int key)
+void	ft_angle(t_fract *fract, int key)
 {
-	if (key == key_up)
+	if (key == key_w)
+		fract->julia_x += (.05 / fract->zoom);
+	if (key == key_s)
+		fract->julia_x -= (.05 / fract->zoom);
+	if (key == key_a)
+		fract->julia_y -= (.05 / fract->zoom);
+	if (key == key_d)
+		fract->julia_y += (.05 / fract->zoom);
+}
+
+void	ft_mzoom(t_fract *fract, int key, int y, int x)
+{
+	if (key == scroll_down)
 	{
-		fract->zoom = 1.2 * fract->zoom;
-		fract->mv_y += (.4 / fract->zoom);
-		fract->mv_x += (fract->angle * .4 / fract->zoom);
+		fract->zoom = .8 * fract->zoom;
+		fract->mv_y -= (((double)y / 800) / fract->zoom);
+		fract->mv_x -= (((double)x / 800) / fract->zoom);
+	}
+	if (key == scroll_up)
+	{
+		fract->zoom = 1.25 * fract->zoom;
+		fract->mv_y += (((double)y / 600) / fract->zoom);
+		fract->mv_x += (((double)x / 600) / fract->zoom);
 		fract->max_iteration *= 1.01;
 	}
-	if (key == key_down)
-	{
-		fract->zoom = .833333 * fract->zoom;
-		fract->mv_y -= (.34 / fract->zoom);
-		fract->mv_x -= (fract->angle * .34 / fract->zoom);
-	}
-	if (key == key_left)
-		fract->angle += .03;
-	if (key == key_right)
-		fract->angle -= .03;
 }
 
 void	ft_zoom(t_fract *fract, int key)
 {
 	if (key == key_minus)
 	{
-		fract->zoom = .833333 * fract->zoom;
-		fract->mv_y -= (.34 / fract->zoom);
-		fract->mv_x -= (.34 / fract->zoom);
+		fract->zoom = .8 * fract->zoom;
+		fract->mv_y -= (.4 / fract->zoom);
+		fract->mv_x -= (.4 / fract->zoom);
 	}
 	if (key == key_plus)
 	{
-		fract->zoom = 1.2 * fract->zoom;
-		fract->mv_y += (.4 / fract->zoom);
-		fract->mv_x += (.4 / fract->zoom);
+		fract->zoom = 1.25 * fract->zoom;
+		fract->mv_y += (.5 / fract->zoom);
+		fract->mv_x += (.5 / fract->zoom);
 		fract->max_iteration *= 1.01;
 	}
 }
 
 int	keydown(int key, t_fract *fract)
 {
-	if (key == key_a)
-		fract->mv_x += (.1 / fract->zoom);
-	if (key == key_d)
+	if (key == key_left)
 		fract->mv_x -= (.1 / fract->zoom);
-	if (key == key_w)
-		fract->mv_y += (.1 / fract->zoom);
-	if (key == key_s)
+	if (key == key_right)
+		fract->mv_x += (.1 / fract->zoom);
+	if (key == key_up)
 		fract->mv_y -= (.1 / fract->zoom);
+	if (key == key_down)
+		fract->mv_y += (.1 / fract->zoom);
 	if (key == key_minus || key == key_plus)
 		ft_zoom(fract, key);
 	if (key == key_n)
 		fract->max_iteration++;
+	if (key == key_esc)
+		ft_destroy_it(fract);
 	if (key == key_m)
 		fract->max_iteration--;
-	if (key == key_up || key == key_down || key == key_left || key == key_right)
-		ft_angle_zoom(fract, key);
+	if (key == key_w || key == key_s || key == key_a || key == key_d)
+		ft_angle(fract, key);
 	ft_chk_px(fract);
 	return (0);
 }
 
-int	mouse_hook(int key, t_fract *fract)
+int	ft_destroy_it(t_fract *fract)
 {
-	if (key == scroll_down)
-		fract->zoom = 1.2 * fract->zoom;
-	if (key == scroll_up)
-		fract->zoom = .8 * fract->zoom;
+	mlx_destroy_window(fract->prog, fract->parent_window);
+	exit(0);
+}
+
+int	mouse_hook(int key, int x, int y, t_fract *fract)
+{
+	char	*out;
+
+	out = malloc(999);
+	sprintf(out, "%f x, %f y press", (-2 + ((float)x / 600) / fract->zoom), (-2
+			+ ((float)y / 600) / fract->zoom));
+	perror(out);
+	if (key == scroll_down || key == scroll_up)
+	{
+		ft_mzoom(fract, key, y, x);
+	}
+	if (key == left_click)
+		if (fract->color_shift++ == 6)
+			fract->color_shift = 1;
+	if (key == right_click)
+	{
+		if (fract->key_flag)
+			fract->key_flag = 0;
+		else
+			fract->key_flag = 1;
+	}
 	ft_chk_px(fract);
 	return (0);
 }
