@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Sat Jun 11 01:15:26 2022
+# Make data base, printed on Sat Jun 11 10:52:15 2022
 
 # Variables
 
@@ -16,6 +16,10 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
+# makefile (from `Makefile', line 61)
+ERROR_COLOR = \033[0;31m
+# makefile (from `Makefile', line 50)
+OBJ_MAIN = $(addprefix objs/, ${MAIN:$(FILE_EXTENSION)=.o})
 # environment
 VSCODE_LOG_NATIVE = false
 # automatic
@@ -26,40 +30,62 @@ VSCODE_LOG_NATIVE = false
 @F = $(notdir $@)
 # makefile
 CURDIR := /Users/akocabas/fractol
-# makefile
-SHELL = /bin/sh
+# makefile (from `Makefile', line 46)
+SHELL := /bin/bash
 # environment
 VSCODE_NLS_CONFIG = {"locale":"tr","availableLanguages":{},"_languagePackSupport":true}
 # environment
 _ = /usr/bin/make
-# makefile
-MAKEFILE_LIST := 
+# makefile (from `Makefile', line 20)
+CFLAGS = -Wall -Werror -Wextra
+# makefile (from `Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# makefile (from `Makefile', line 21)
+DFLAGS = -MMD -MF $(@:.o=.d)
 # environment
 VSCODE_VERBOSE_LOGGING = true
+# makefile (from `Makefile', line 26)
+NOVISU = 0 
+# makefile (from `Makefile', line 65)
+COM_STRING = "compiling"
+# makefile (from `Makefile', line 49)
+OBJS = $(addprefix objs/, ${SRCS:$(FILE_EXTENSION)=.o})
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000c_v40032ps/T/vscode-ipc-a4c12626-db63-4bb1-bc71-a834b30420d1.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000c_v40032ps/T/vscode-ipc-16548b4a-da4a-4b23-9e11-af53b3475c26.sock
 # environment
 VSCODE_CWD = /
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Library/Apple/usr/bin:/goinfre/akocabas/homebrew/bin
+# makefile (from `Makefile', line 92)
+run_and_test = printf "%b%-46b" "$(COM_COLOR)$(COM_STRING) " "$(OBJ_COLOR)$(@F)$(NO_COLOR)"; $(RUN_CMD); if [ $$RESULT -ne 0 ]; then printf "%b\n" "$(ERROR_COLOR)[✖]$(NO_COLOR)"; rm -rf .files_changed; if [ $(NOVISU) -eq 0 ]; then echo; fi; elif [ -s $@.log ]; then printf "%b\n" "$(WARN_COLOR)[⚠]$(NO_COLOR)"; else printf "%b\n" "$(OK_COLOR)[✓]$(NO_COLOR)"; fi; cat $@.log; rm -f $@.log; exit $$RESULT
+# makefile (from `Makefile', line 74)
+RUN_CMD = script -q $@.log $1 > /dev/null; RESULT=$$?
 # environment
-LaunchInstanceID = 081A1F8B-B3AC-43E0-9A04-87612F9BD5F8
+LaunchInstanceID = 4666C475-01B6-442F-A469-B585C7BA5449
 # environment
 VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# makefile (from `Makefile', line 60)
+OK_COLOR = \033[0;32m
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.Utrk5ILL5W/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.ZHBRI0Xvn0/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
 VSCODE_PIPE_LOGGING = true
+# makefile (from `Makefile', line 111)
+save_files_changed = 	FILE_CPP=`echo $(SRCS) $(MAIN)`; FILE_OBJ=`find objs -type f -name '*.o' 2>/dev/null | sed 's/objs\///'`; TO_COMPILE=`echo $$FILE_CPP | wc -w`; for FILE in $$FILE_CPP; do for OBJ in $$FILE_OBJ; do if [ $${FILE%$(FILE_EXTENSION)} = $${OBJ%.o} ]; then if [ $(SRCS_PATH)/$$FILE -ot objs/$$OBJ ]; then FILE_DEP=`echo objs/$$OBJ | sed 's/\.o/\.d/'`; HEAD_FILES=`< $$FILE_DEP xargs | grep -oh "\w*.h\w*"`; RECOMPILE=0; for HEAD in $$HEAD_FILES; do if [ $(SRCS_PATH)/$$HEAD -nt objs/$$OBJ ]; then RECOMPILE=1; break; fi; done; if [ $$RECOMPILE -eq 0 ]; then ((TO_COMPILE=$$TO_COMPILE-1)); fi; fi; fi; done; done; echo 0/$$TO_COMPILE > .files_changed
 # environment
 PWD = /Users/akocabas/fractol
+# makefile (from `Makefile', line 59)
+OBJ_COLOR = \033[0;36m
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# makefile (from `Makefile', line 89)
+HASH := 6ee8eef
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -71,25 +97,39 @@ VSCODE_CODE_CACHE_PATH = /Users/akocabas/Library/Application Support/Code/Cached
 # environment
 LOGNAME = akocabas
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# makefile (from `Makefile', line 70)
+detected_OS := Darwin
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
+# makefile (from `Makefile', line 52)
+DEPS_MAIN = $(addprefix objs/, ${MAIN:$(FILE_EXTENSION)=.d})
+# makefile (from `Makefile', line 58)
+COM_COLOR = \033[0;34m
+# makefile (from `Makefile', line 62)
+WARN_COLOR = \033[0;33m
 # environment
 XPC_FLAGS = 0x0
 # default
 MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
+# makefile (from `Makefile', line 38)
+SRCS = algorithm.c color.c draw.c drawm.c fract.c keys.c
 # environment
 SHLVL = 1
+# makefile (from `Makefile', line 19)
+CC = clang++
 # default
 MAKE_VERSION := 3.81
 # environment
 USER = akocabas
 # makefile
-.DEFAULT_GOAL := 
+.DEFAULT_GOAL := all
+# makefile (from `Makefile', line 18)
+NAME = maketest
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
@@ -108,12 +148,24 @@ MAKEFLAGS = Rrqp
 MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
+# makefile (from `Makefile', line 40)
+MAIN = main.c
 # environment
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000002.Electron
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000001.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
+# makefile (from `Makefile', line 87)
+AUTHOR := CheaterAK
+# makefile (from `Makefile', line 164)
+display_progress_bar = 	if [ $(NOVISU) -eq 0 ]; then line=`bash -c 'oldstty=$$(stty -g); stty raw -echo min 0; tput u7 > /dev/tty; IFS=";" read -r -d R -a pos; stty $$oldstty; row=$$(($${pos[0]:2} - 1)); echo $$row'`; max_line=`tput lines`; ((max_line=$$max_line-2)); new_line=0; tput sc; i=0; while [ $$i -lt 60 ]; do printf " "; ((i=$$i+1)); done; tput rc; if [ $$line -gt $$max_line ]; then new_line=1; echo ; else ((line=$$line+1)); fi; tput sc; tput cup $$line; $(draw_bar) if [ $$new_line -eq 1 ]; then ((line=$$line-1)); tput cup $$line; else tput rc; fi; fi
 # automatic
 +F = $(notdir $+)
+# makefile (from `Makefile', line 36)
+INCLUDE_PATH = ./inc
+# makefile (from `Makefile', line 32)
+FILE_EXTENSION = .cpp
+# makefile (from `Makefile', line 138)
+draw_bar = 	FILE_TOTAL=`bash -c 'cat .files_changed | cut -d"/" -f2'`; FILE_DONE=`bash -c 'cat .files_changed | cut -d"/" -f1'`; if [ $$FILE_TOTAL -eq 0 ]; then FILE_TOTAL=1; FILE_DONE=1; fi; RES=`echo "scale=2; $$FILE_DONE/$$FILE_TOTAL*48" | bc`; RES=`echo $${RES%%.*}`; printf "$(OBJ_COLOR)[$(NO_COLOR)"; i=0; while [ $$i -lt 48 ]; do if [ $$i -lt $$RES ]; then printf "$(OK_COLOR)█$(NO_COLOR)"; else printf "$(COM_COLOR)▒$(NO_COLOR)"; fi; ((i=$$i+1)); done; printf "$(OBJ_COLOR)]$(NO_COLOR)"; printf " ($(COM_COLOR)$$FILE_DONE$(NO_COLOR)/$(COM_COLOR)$$FILE_TOTAL$(NO_COLOR))"; printf " "; ((FILE_DONE=$$FILE_DONE+1)); echo $$FILE_DONE/$$FILE_TOTAL > .files_changed;
 # environment
 __CF_USER_TEXT_ENCODING = 0x18AD9:0x0:0x0
 # environment
@@ -122,12 +174,18 @@ COMMAND_MODE = unix2003
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
+# makefile (from `Makefile', line 34)
+SRCS_PATH = ./src
+# makefile (from `Makefile', line 88)
+DATE := 2022/06/11 08:45:18
 # environment
 LC_ALL = C
 # environment
 SECURITYSESSIONID = 186a8
 # automatic
 ^F = $(notdir $^)
+# makefile (from `Makefile', line 51)
+DEPS = $(addprefix objs/, ${SRCS:$(FILE_EXTENSION)=.d})
 # default
 SUFFIXES := 
 # default
@@ -137,9 +195,11 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 27737
+VSCODE_PID = 3797
+# makefile (from `Makefile', line 63)
+NO_COLOR = \033[m
 # variable set hash-table stats:
-# Load=63/1024=6%, Rehash=0, Collisions=1/84=1%
+# Load=93/1024=9%, Rehash=0, Collisions=11/169=7%
 
 # Pattern-specific Variable Values
 
@@ -147,22 +207,100 @@ VSCODE_PID = 27737
 
 # Directories
 
-# . (device 16777225, inode 692625): 11 files, no impossibilities.
+# . (device 16777225, inode 692625): 14 files, no impossibilities.
+# ./src (device 16777225, inode 712563): No files, no impossibilities so far.
 
-# 11 files, no impossibilities in 1 directories.
+# 14 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
-# No implicit rules.
+objs/%.o: ./src/%.cpp
+#  commands to execute (from `Makefile', line 232):
+	@mkdir -p $(dir $@)
+	@$(call display_progress_bar)
+	@$(call run_and_test,$(CC) $(CFLAGS) $(DFLAGS) -c $< -o $@ -I$(INCLUDE_PATH)) -framework OpenGL -framework AppKit
+	
+
+# 1 implicit rules, 0 (0.0%) terminal.
 
 # Files
 
-# Not a target:
-all:
+setup:
+#  Implicit rule search has not been done.
+ 
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 229):
+	@$(call save_files_changed)
+	
+
+all: header setup maketest
+#  Phony target (prerequisite of .PHONY).
 #  Command-line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/19=0%
+#  commands to execute (from `Makefile', line 200):
+	@rm -rf .files_changed
+	
+
+.PHONY: all clean fclean re header
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+header:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: `'
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := header
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=3/27=11%
+#  commands to execute (from `Makefile', line 203):
+	@printf "%b" "$(OK_COLOR)"
+	@echo "        ___  _____     "
+	@echo "       /   |/ __  \    "
+	@echo "      / /| |\`' / /  "
+	@echo "     / /_| |  / /   "
+	@echo "     \___  |./ /___ "
+	@echo "         |_/\_____/   "
+	@echo
+	@printf "%b" "$(OBJ_COLOR)Name:	$(WARN_COLOR)$(NAME)@$(HASH)\n"
+	@printf "%b" "$(OBJ_COLOR)Author:	$(WARN_COLOR)$(AUTHOR)\n"
+	@printf "%b" "$(OBJ_COLOR)Date: 	$(WARN_COLOR)$(DATE)\n\033[m"
+	@printf "%b" "$(OBJ_COLOR)CC: 	$(WARN_COLOR)$(CC)\n\033[m"
+	@printf "%b" "$(OBJ_COLOR)Flags: 	$(WARN_COLOR)$(CFLAGS)\n\033[m"
+	@echo
+	
+
+# Not a target:
+objs/draw.c:
+#  A default, MAKEFILES, or -include/sinclude makefile.
 #  Implicit rule search has been done.
 #  File does not exist.
-#  File has not been updated.
+#  File has been updated.
+#  Failed to be updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
@@ -174,6 +312,15 @@ all:
 
 # Not a target:
 Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-11 09:21:22
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+objs/algorithm.c:
 #  A default, MAKEFILES, or -include/sinclude makefile.
 #  Implicit rule search has been done.
 #  File does not exist.
@@ -183,7 +330,56 @@ Makefile:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-makefile:
+objs/main.c:
+#  A default, MAKEFILES, or -include/sinclude makefile.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+maketest: objs/algorithm.c objs/color.c objs/draw.c objs/drawm.c objs/fract.c objs/keys.c objs/main.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 225):
+	@$(call display_progress_bar)
+	@$(call run_and_test,$(CC) $(CFLAGS) $(DFLAGS) -I$(INCLUDE_PATH) -o $@ ${OBJS} ${OBJ_MAIN})
+	
+
+fclean: header clean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 241):
+	@rm -rf $(NAME)
+	@printf "%-53b%b" "$(COM_COLOR)fclean:" "$(OK_COLOR)[✓]$(NO_COLOR)\n"
+	
+
+# Not a target:
+objs/keys.c:
+#  A default, MAKEFILES, or -include/sinclude makefile.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+objs/color.c:
+#  A default, MAKEFILES, or -include/sinclude makefile.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+objs/fract.c:
 #  A default, MAKEFILES, or -include/sinclude makefile.
 #  Implicit rule search has been done.
 #  File does not exist.
@@ -198,8 +394,14 @@ makefile:
 #  Modification time never checked.
 #  File has not been updated.
 
+re: fclean all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
 # Not a target:
-GNUmakefile:
+objs/drawm.c:
 #  A default, MAKEFILES, or -include/sinclude makefile.
 #  Implicit rule search has been done.
 #  File does not exist.
@@ -208,21 +410,29 @@ GNUmakefile:
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
+clean: header
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 237):
+	@rm -rf objs objs_tests
+	@printf "%-53b%b" "$(COM_COLOR)clean:" "$(OK_COLOR)[✓]$(NO_COLOR)\n"
+	
+
 # files hash-table stats:
-# Load=6/1024=1%, Rehash=0, Collisions=0/17=0%
+# Load=18/1024=2%, Rehash=0, Collisions=8/59=14%
 # VPATH Search Paths
 
 # No `vpath' search paths.
 
 # No general (`VPATH' variable) search path.
 
-# # of strings in strcache: 0
-# # of strcache buffers: 0
-# strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
-# strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
+# # of strings in strcache: 8
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 3995 / max = 3995 / min = 3995 / avg = 3995
 
-# Finished Make data base on Sat Jun 11 01:15:26 2022
+# Finished Make data base on Sat Jun 11 10:52:15 2022
 
  
-make: *** No rule to make target `all'.  Stop.
-
