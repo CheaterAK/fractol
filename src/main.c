@@ -6,12 +6,49 @@
 /*   By: akocabas <akocabas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 04:21:02 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/03 12:23:25 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/11 08:13:09 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fract.h"
 #include "../minilibx_macos/mlx.h"
+
+void	init_mfract(t_fract *fract)
+{
+	if (fract->fract_type == burningship)
+	{
+		fract->mini_fract1_type = julia;
+		fract->mini_fract2_type = mandelbrot;
+		fract->mini_fract3_type = tricorn;
+	}
+	if (fract->fract_type == julia)
+	{
+		fract->mini_fract1_type = burningship;
+		fract->mini_fract2_type = mandelbrot;
+		fract->mini_fract3_type = tricorn;
+	}
+	if (fract->fract_type == mandelbrot)
+	{
+		fract->mini_fract1_type = burningship;
+		fract->mini_fract2_type = julia;
+		fract->mini_fract3_type = tricorn;
+	}
+	if (fract->fract_type == tricorn)
+	{
+		fract->mini_fract1_type = burningship;
+		fract->mini_fract2_type = julia;
+		fract->mini_fract3_type = mandelbrot;
+	}
+	mfract_checkpx(fract);
+}
+
+void	color_init(t_fract *fract)
+{
+	fract->r = 1;
+	fract->g = 1;
+	fract->b = 1;
+	fract->o = 0;
+}
 
 void	fract_init2(char *fract_name, t_fract *fract)
 {
@@ -33,10 +70,13 @@ void	fract_init2(char *fract_name, t_fract *fract)
 		fract->zoom = 1;
 		fract->fract_type = julia;
 	}
+	init_mfract(fract);
 }
 
 void	fract_init(char *fract_name, t_fract *fract)
 {
+	color_init(fract);
+	fract->color_shift = 0;
 	if (!strcmp(fract_name, "Mandelbrot"))
 	{
 		fract->max_iteration = 150;
@@ -44,6 +84,9 @@ void	fract_init(char *fract_name, t_fract *fract)
 		fract->mv_y = 0;
 		fract->zoom = 1;
 		fract->fract_type = mandelbrot;
+		fract->mini_fract1_type = burningship;
+		fract->mini_fract1_type = julia;
+		fract->mini_fract3_type = tricorn;
 		fract->angle = 0;
 	}
 	else if (!strcmp(fract_name, "Burningship"))
@@ -53,13 +96,9 @@ void	fract_init(char *fract_name, t_fract *fract)
 		fract->mv_x = 0;
 		fract->mv_y = 0;
 		fract->zoom = 1;
-		fract->fract_type = burnungship;
-		fract->mini_fract1_type = julia;
-		fract->mini_fract2_type = mandelbrot;
-		fract->mini_fract3_type = tricorn;
+		fract->fract_type = burningship;
 	}
-	else
-		fract_init2(fract_name, fract);
+	fract_init2(fract_name, fract);
 }
 
 void	ft_init_prog(t_fract *fract)
