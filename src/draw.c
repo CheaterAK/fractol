@@ -6,15 +6,13 @@
 /*   By: akocabas <akocabas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 08:58:06 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/11 08:13:03 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/11 11:05:12 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fract.h"
 #include "../minilibx_macos/mlx.h"
 
-// if (iter == fract->max_iteration)
-// 	my_put_pixel(&fract->img, x, y, color(0, iter, iter, iter));
 void	draw_fract2(t_fract *fract, int x, int y, int iter)
 {
 	if (fract->fract_type == julia)
@@ -143,4 +141,3 @@ void	draw_mfract1(t_fract *fract, int x, int y)
 	}
 	draw_mfract1_2(fract, x, y);
 }
-

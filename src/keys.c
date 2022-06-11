@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 04:29:26 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/11 08:28:56 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/11 11:08:51 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,23 +23,6 @@ void	ft_angle(t_fract *fract, int key)
 		fract->julia_y -= (.05 / fract->zoom);
 	if (key == key_d)
 		fract->julia_y += (.05 / fract->zoom);
-}
-
-void	ft_mzoom(t_fract *fract, int key, int y, int x)
-{
-	if (key == scroll_down)
-	{
-		fract->zoom = .8 * fract->zoom;
-		fract->mv_y -= (((double)y / 800) / fract->zoom);
-		fract->mv_x -= (((double)x / 800) / fract->zoom);
-	}
-	if (key == scroll_up)
-	{
-		fract->zoom = 1.25 * fract->zoom;
-		fract->mv_y += (((double)y / 600) / fract->zoom);
-		fract->mv_x += (((double)x / 600) / fract->zoom);
-		fract->max_iteration *= 1.01;
-	}
 }
 
 void	ft_zoom(t_fract *fract, int key)
@@ -95,33 +78,6 @@ int	keydown(int key, t_fract *fract)
 		ft_angle(fract, key);
 	if (key == key_r || key == key_g || key == key_b || key == key_t)
 		ft_color_init(fract, key);
-	ft_chk_px(fract);
-	return (0);
-}
-
-int	ft_destroy_it(t_fract *fract)
-{
-	mlx_destroy_window(fract->prog, fract->parent_window);
-	exit(0);
-}
-
-int	mouse_hook(int key, int x, int y, t_fract *fract)
-{
-
-	if (key == scroll_down || key == scroll_up)
-	{
-		ft_mzoom(fract, key, y, x);
-	}
-	if (key == left_click)
-		if (fract->color_shift++ == 2)
-			fract->color_shift = 0;
-	if (key == right_click)
-	{
-		if (fract->key_flag)
-			fract->key_flag = 0;
-		else
-			fract->key_flag = 1;
-	}
 	ft_chk_px(fract);
 	return (0);
 }

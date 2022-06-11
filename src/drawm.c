@@ -6,10 +6,9 @@
 /*   By: akocabas <akocabas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 06:15:42 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/11 08:13:05 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/11 11:03:43 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../inc/fract.h"
 #include "../minilibx_macos/mlx.h"

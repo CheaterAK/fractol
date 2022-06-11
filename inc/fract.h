@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 08:57:32 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/11 08:12:01 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/11 11:10:27 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,5 +120,7 @@ void	draw_mfract2(t_fract *fract, int x, int y);
 void	draw_mfract3(t_fract *fract, int x, int y);
 void	mfract_checkpx(t_fract *fract);
 void	fract_init(char *fract_name, t_fract *fract);
+int		ft_m_move(int x, int y, t_fract *fract);
+void	ft_init_prog(t_fract *fract);
 
 #endif
