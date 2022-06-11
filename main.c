@@ -6,12 +6,12 @@
 /*   By: akocabas <akocabas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 04:21:02 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/11 08:13:09 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/11 10:55:37 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/fract.h"
-#include "../minilibx_macos/mlx.h"
+#include "inc/fract.h"
+#include "minilibx_macos/mlx.h"
 
 void	init_mfract(t_fract *fract)
 {
