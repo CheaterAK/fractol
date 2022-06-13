@@ -2,6 +2,7 @@
 	"makefile.extensionOutputFolder": "./.vscode",
 	"files.associations": {
 		"mlx.h": "c",
-		"fract.h": "c"
+		"fract.h": "c",
+		"deque": "cpp"
 	}
 }

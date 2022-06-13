@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 04:16:20 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/11 06:47:15 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/11 11:53:53 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ int	ft_julia(t_fract *fract, int x, int y, int scale)
 	int		iter;
 	double	temp;
 
-	fract->c.r = (-0.70176 + fract->julia_x);
-	fract->c.i = (0.3842 + fract->julia_y);
+	fract->c.r = 0 + fract->julia_x;
+	fract->c.i = 0 + fract->julia_y;
 	fract->z.i = -2.0 + y * 4.0 / (fract->zoom * (fract->img_size / scale))
 		+ (fract->mv_y);
 	fract->z.r = -2.0 + x * 4.0 / (fract->zoom * (fract->img_size / scale))
@@ -54,61 +54,6 @@ int	ft_julia(t_fract *fract, int x, int y, int scale)
 		temp = (fract->z.r * fract->z.r) - (fract->z.i * fract->z.i);
 		fract->z.i = 2 * (fract->z.i * fract->z.r) + fract->c.i;
 		fract->z.r = temp + fract->c.r;
-		iter++;
-	}
-	return (iter);
-}
-
-int	ft_tricorn(t_fract *fract, int x, int y, int scale)
-{
-	int		iter;
-	double	r_sqr;
-	double	i_sqr;
-
-	fract->c.i = -2.0 + y * 4.0 / (fract->zoom * (fract->img_size / scale))
-		+ (fract->mv_y);
-	fract->c.r = -2.0 + x * 4.0 / (fract->zoom * (fract->img_size / scale))
-		+ (fract->mv_x);
-	fract->z.i = 0;
-	fract->z.r = 0;
-	iter = 0;
-	r_sqr = 0;
-	i_sqr = 0;
-	while (r_sqr + i_sqr <= 4 && iter < (fract->max_iteration / scale))
-	{
-		fract->z.i = 2 * (fract->z.i * fract->z.r) + fract->c.i;
-		fract->z.r = r_sqr - i_sqr + fract->c.r;
-		r_sqr = -1 * fract->z.r * fract->z.r;
-		i_sqr = -1 * fract->z.i * fract->z.i;
-		iter++;
-	}
-	return (iter);
-}
-
-int	ft_burningship(t_fract *fract, int x, int y, int scale)
-{
-	int		iter;
-	double	r_sqr;
-	double	i_sqr;
-
-	fract->c.i = -2.0 + y * 4.0 / (fract->zoom * (fract->img_size / scale))
-		+ (fract->mv_y);
-	fract->c.r = -2.0 + x * 4.0 / (fract->zoom * (fract->img_size / scale))
-		+ (fract->mv_x);
-	fract->z = (t_complex){.i = 0, .r = 0};
-	iter = 0;
-	r_sqr = 0;
-	i_sqr = 0;
-	while (r_sqr + i_sqr <= 4 && iter < (fract->max_iteration / scale))
-	{
-		fract->z.i = 2 * (fract->z.i * fract->z.r) + fract->c.i;
-		fract->z.r = r_sqr - i_sqr + fract->c.r;
-		if (fract->z.i < 0)
-			fract->z.i *= -1;
-		if (fract->z.r < 0)
-			fract->z.r *= -1;
-		r_sqr = fract->z.r * fract->z.r;
-		i_sqr = fract->z.i * fract->z.i;
 		iter++;
 	}
 	return (iter);

@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 11:08:00 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/11 11:28:17 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/11 11:08:46 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,15 @@ void	ft_mzoom(t_fract *fract, int key, int y, int x)
 	if (key == scroll_down)
 	{
 		fract->zoom = .8 * fract->zoom;
-		fract->mv_y -= (.4 / fract->zoom);
-		fract->mv_x -= (.4 / fract->zoom);
+		fract->mv_y -= (((double)y / 800) / fract->zoom);
+		fract->mv_x -= (((double)x / 800) / fract->zoom);
 	}
 	if (key == scroll_up)
 	{
 		fract->zoom = 1.25 * fract->zoom;
-		fract->mv_y += (.5 / fract->zoom);
-		fract->mv_x += (.5 / fract->zoom);
+		fract->mv_y += (((double)y / 600) / fract->zoom);
+		fract->mv_x += (((double)x / 600) / fract->zoom);
+		fract->max_iteration *= 1.01;
 	}
 }
 
@@ -49,6 +50,9 @@ int	mouse_hook(int key, int x, int y, t_fract *fract)
 	{
 		ft_mzoom(fract, key, y, x);
 	}
+	if (key == left_click)
+		if (fract->color_shift++ == 2)
+			fract->color_shift = 0;
 	if (key == right_click)
 	{
 		if (fract->key_flag)

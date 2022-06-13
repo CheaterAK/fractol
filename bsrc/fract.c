@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 08:56:17 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/11 11:16:34 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/11 08:11:52 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,10 @@ void	ft_chk_px(t_fract *fract)
 				iter = ft_julia(fract, x, y, 1);
 			else if (fract->fract_type == mandelbrot)
 				iter = ft_mandelbrot(fract, x, y, 1);
+			else if (fract->fract_type == burningship)
+				iter = ft_burningship(fract, x, y, 1);
+			else if (fract->fract_type == tricorn)
+				iter = ft_tricorn(fract, x, y, 1);
 			draw_fract(fract, x, y, iter);
 		}
 		y = -1;

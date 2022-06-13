@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 04:29:26 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/11 11:26:12 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/12 06:36:11 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,18 @@ void	ft_zoom(t_fract *fract, int key)
 	}
 }
 
+void	ft_reinit(t_fract *fract, int key)
+{
+	if (key == key_1)
+		fract_init("Burningship", fract);
+	if (key == key_2)
+		fract_init("Julia", fract);
+	if (key == key_3)
+		fract_init("Mandelbrot", fract);
+	if (key == key_4)
+		fract_init("Tricorn", fract);
+}
+
 int	keydown(int key, t_fract *fract)
 {
 	if (key == key_left)
@@ -54,10 +66,18 @@ int	keydown(int key, t_fract *fract)
 		fract->mv_y += (.1 / fract->zoom);
 	if (key == key_minus || key == key_plus)
 		ft_zoom(fract, key);
+	if (key == key_1 || key == key_2 || key == key_3 || key == key_4)
+		ft_reinit(fract, key);
+	if (key == key_n)
+		fract->max_iteration++;
 	if (key == key_esc)
 		ft_destroy_it(fract);
+	if (key == key_m)
+		fract->max_iteration--;
 	if (key == key_w || key == key_s || key == key_a || key == key_d)
 		ft_angle(fract, key);
+	if (key == key_r || key == key_g || key == key_b || key == key_t)
+		ft_color_init(fract, key);
 	ft_chk_px(fract);
 	return (0);
 }

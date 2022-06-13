@@ -6,13 +6,13 @@
 /*   By: akocabas <akocabas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 08:57:32 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/11 11:10:27 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/13 05:43:11 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACT_H
 # define FRACT_H
-
+# include "libft/libft.h"
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
@@ -58,6 +58,7 @@ enum {
 
 typedef struct s_complex
 {
+
 	double	r;
 	double	i;
 }	t_complex;
@@ -76,8 +77,8 @@ typedef struct s_fract
 	t_complex	c;
 	t_complex	z;
 	int			max_iteration;
-	double		mv_x;
-	double		mv_y;
+	long double		mv_x;
+	long double		mv_y;
 	double		zoom;
 	t_data		img;
 	t_data		mini_fract1;
@@ -97,9 +98,10 @@ typedef struct s_fract
 	int			o;
 	int			img_size;
 	int			mini_fract_size;
-	double		julia_x;
-	double		julia_y;
+	long double		julia_x;
+	long double		julia_y;
 	int			key_flag;
+	int			error;
 }	t_fract;
 
 int		ft_julia(t_fract *fract, int x, int y, int scale);
@@ -122,5 +124,8 @@ void	mfract_checkpx(t_fract *fract);
 void	fract_init(char *fract_name, t_fract *fract);
 int		ft_m_move(int x, int y, t_fract *fract);
 void	ft_init_prog(t_fract *fract);
-
+void	ft_error_message(void);
+void	ft_invalid_julia(void);
+void	ft_invalid_fract(void);
+void	ft_julia_preset(char preset, t_fract *fract);
 #endif
