@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 04:29:26 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/11 11:26:12 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/13 11:58:16 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ void	ft_angle(t_fract *fract, int key)
 
 void	ft_zoom(t_fract *fract, int key)
 {
-	if (key == key_minus)
+	if (key == key_minus || key == scroll_down)
 	{
 		fract->zoom = .8 * fract->zoom;
 		fract->mv_y -= (.4 / fract->zoom);
 		fract->mv_x -= (.4 / fract->zoom);
 	}
-	if (key == key_plus)
+	if (key == key_plus || key == scroll_up)
 	{
 		fract->zoom = 1.25 * fract->zoom;
 		fract->mv_y += (.5 / fract->zoom);
@@ -58,6 +58,39 @@ int	keydown(int key, t_fract *fract)
 		ft_destroy_it(fract);
 	if (key == key_w || key == key_s || key == key_a || key == key_d)
 		ft_angle(fract, key);
+	ft_chk_px(fract);
+	return (0);
+}
+
+int	ft_m_move(int x, int y, t_fract *fract)
+{
+	if ((x >= fract->img_size || x < 0) || y >= fract->img_size || y < 0)
+	{
+		return (0);
+	}
+	if (!fract->key_flag)
+		return (0);
+	fract->julia_x = (-1 + (double)x / 300) / fract->zoom;
+	fract->julia_y = (-1 + (double)y / 300) / fract->zoom;
+	ft_chk_px(fract);
+	return (1);
+}
+
+int	mouse_hook(int key, int x, int y, t_fract *fract)
+{
+	if (key == scroll_down || key == scroll_up)
+	{
+		ft_zoom(fract, key);
+	}
+	if (key == right_click)
+	{
+		if (fract->key_flag)
+			fract->key_flag = 0;
+		else
+			fract->key_flag = 1;
+	}
+	x = 0;
+	y = 0;
 	ft_chk_px(fract);
 	return (0);
 }
