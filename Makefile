@@ -6,45 +6,43 @@
 #    By: akocabas <akocabas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/13 10:18:18 by akocabas          #+#    #+#              #
-#    Updated: 2022/06/13 12:21:30 by akocabas         ###   ########.fr        #
+#    Updated: 2022/06/13 14:36:50 by akocabas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fractol
 
-SRC_DIR = ./src
+LIBFT = ./libft/libft.a
 
-BONUS_SRC_DIR = ./src_bonus
+SRCS = algorithms.c color.c draw.c fract.c init.c keys.c errors.c main.c
+OBJS = $(SRCS:.c=.o)
 
-SRCS = algorithms.c color.c draw.c fract.c init.c keys.c
-OBJS = $(addprefix $(SRC_DIR)/,$(SRCS:.c=.o))
-
-MAIN_SRC = main.c
-MAIN_OBJ = main.o
-
-BONUS =
+BONUS_SRC =
 BONUS_OBJS = $(BONUS:.c=.o)
 
 CC = gcc
-CFLAGS = -I. -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 MLXFLAGS = -framework OpenGL -framework AppKit
 
 .PHONY: all clean fclean re bonus
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(MAIN_OBJ)
-	ar rcs $(NAME) $(notdir $(OBJS))
+M_Libft:
+	make -C libft
+
+$(NAME): M_Libft $(OBJS)
+	$(CC) $(OBJS) $(MLXFLAGS) minilibx_macos/libmlx.a $(LIBFT) -o $(NAME)
 
 %.o: %.c
 	$(CC) -c $^ $(CFLAGS)
 clean:
 	rm -f $(OBJS) $(BONUS_OBJS)
 fclean: clean
-	rm -f $(notdir $(OBJS))
+	rm -f $(OBJS) $(NAME)
 
 re: fclean $(NAME)
 
 bonus: $(OBJS) $(BONUS_OBJS)
-	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+	gcc $(NAME)  $(BONUS_OBJS)
 

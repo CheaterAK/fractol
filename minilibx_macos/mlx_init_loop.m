@@ -1,4 +1,4 @@
-//  mlx_init_loop.m
+//  mlx_init_loop./m
 // By Ol
 
 #import <Cocoa/Cocoa.h>

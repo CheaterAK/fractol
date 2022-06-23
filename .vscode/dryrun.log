@@ -1,14 +1,15 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/akocabas/fractol'
-gcc -c src/algorithms.c -I. -Wall -Wextra -Werror 
+make -C libft
  
-gcc -c src/color.c -I. -Wall -Wextra -Werror 
-gcc -c src/draw.c -I. -Wall -Wextra -Werror 
-gcc -c src/fract.c -I. -Wall -Wextra -Werror 
-gcc -c src/init.c -I. -Wall -Wextra -Werror 
-gcc -c src/keys.c -I. -Wall -Wextra -Werror 
- 
-gcc -c src/mausekeys.c -I. -Wall -Wextra -Werror 
-ar rcs fractol ./src/algorithms.o ./src/color.o ./src/draw.o ./src/fract.o ./src/init.o ./src/keys.o ./src/mausekeys.o
+gcc -c algorithms.c -Wall -Wextra -Werror
+gcc -c color.c -Wall -Wextra -Werror
+gcc -c draw.c -Wall -Wextra -Werror
+gcc -c fract.c -Wall -Wextra -Werror
+gcc -c init.c -Wall -Wextra -Werror
+gcc -c keys.c -Wall -Wextra -Werror
+gcc -c errors.c -Wall -Wextra -Werror
+gcc -c main.c -Wall -Wextra -Werror
+gcc algorithms.o color.o draw.o fract.o init.o keys.o errors.o main.o -framework OpenGL -framework AppKit minilibx_macos/libmlx.a ./libft/libft.a -o fractol
 make: Leaving directory `/Users/akocabas/fractol'
  
