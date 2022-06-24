@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   init_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akocabas <akocabas@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 11:05:50 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/13 14:10:14 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/24 11:00:11 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./fract.h"
-#include "./minilibx_macos/mlx.h"
+#include "minilibx_opengl_20191021/mlx.h"
 
 void	init_mfract(t_fract *fract)
 {

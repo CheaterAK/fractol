@@ -3,16 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   fract.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akocabas <akocabas@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 08:57:32 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/22 01:31:57 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/24 11:05:14 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACT_H
 # define FRACT_H
-# include "libft/libft.h"
+
+# include <string.h>
+# include <stdio.h>
+# include <stdlib.h>
 
 enum {
 	mandelbrot = 1,
@@ -54,7 +57,6 @@ enum {
 
 typedef struct s_complex
 {
-
 	double	r;
 	double	i;
 }	t_complex;
@@ -73,8 +75,8 @@ typedef struct s_fract
 	t_complex	c;
 	t_complex	z;
 	int			max_iteration;
-	long double		mv_x;
-	long double		mv_y;
+	double		mv_x;
+	double		mv_y;
 	double		zoom;
 	t_data		img;
 	t_data		mini_fract1;
@@ -94,8 +96,8 @@ typedef struct s_fract
 	int			o;
 	int			img_size;
 	int			mini_fract_size;
-	long double		julia_x;
-	long double		julia_y;
+	double		julia_x;
+	double		julia_y;
 	int			key_flag;
 	int			error;
 }	t_fract;
@@ -127,4 +129,3 @@ void	ft_julia_preset(char preset, t_fract *fract);
 int		ft_destroy_it(t_fract *fract);
 
 #endif
-

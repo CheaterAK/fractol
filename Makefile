@@ -12,8 +12,6 @@
 
 NAME = fractol
 
-LIBFT = ./libft/libft.a
-
 SRCS = algorithms.c color.c draw.c fract.c init.c keys.c errors.c main.c
 OBJS = $(SRCS:.c=.o)
 
@@ -28,11 +26,8 @@ MLXFLAGS = -framework OpenGL -framework AppKit
 
 all: $(NAME)
 
-M_Libft:
-	make -C libft
-
-$(NAME): M_Libft $(OBJS)
-	$(CC) $(OBJS) $(MLXFLAGS) minilibx_macos/libmlx.a $(LIBFT) -o $(NAME)
+$(NAME):  $(OBJS)
+	$(CC) $(OBJS) $(MLXFLAGS) minilibx_opengl_20191021/libmlx.a -o $(NAME)
 
 %.o: %.c
 	$(CC) -c $^ $(CFLAGS)

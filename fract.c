@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   fract.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akocabas <akocabas@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 08:56:17 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/14 01:36:02 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/24 10:50:34 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./fract.h"
-#include "./minilibx_macos/mlx.h"
+#include"minilibx_opengl_20191021/mlx.h"
 
 void	my_put_pixel(t_data *data, int x, int y, int color)
 {
