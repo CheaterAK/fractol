@@ -4,5 +4,12 @@
 		"mlx.h": "c",
 		"fract.h": "c",
 		"deque": "cpp"
-	}
+	},
+	"makefile.launchConfigurations": [
+		{
+			"cwd": "/mnt/d/fractol",
+			"binaryPath": "/mnt/d/fractol/fractol",
+			"binaryArgs": []
+		}
+	]
 }

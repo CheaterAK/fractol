@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algorithms.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akocabas <akocabas@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 04:16:20 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/13 14:09:03 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/25 13:51:49 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int	ft_julia(t_fract *fract, int x, int y, int scale)
 	}
 	return (iter);
 }
+
 void	ft_julia_preset(char preset, t_fract *fract)
 {
 	if (preset == '1')

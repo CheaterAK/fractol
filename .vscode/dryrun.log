@@ -1,7 +1,5 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory `/Users/akocabas/fractol'
-make -C libft
- 
+make: Entering directory '/mnt/d/fractol'
 gcc -c algorithms.c -Wall -Wextra -Werror
 gcc -c color.c -Wall -Wextra -Werror
 gcc -c draw.c -Wall -Wextra -Werror
@@ -10,6 +8,6 @@ gcc -c init.c -Wall -Wextra -Werror
 gcc -c keys.c -Wall -Wextra -Werror
 gcc -c errors.c -Wall -Wextra -Werror
 gcc -c main.c -Wall -Wextra -Werror
-gcc algorithms.o color.o draw.o fract.o init.o keys.o errors.o main.o -framework OpenGL -framework AppKit minilibx_macos/libmlx.a ./libft/libft.a -o fractol
-make: Leaving directory `/Users/akocabas/fractol'
+gcc algorithms.o color.o draw.o fract.o init.o keys.o errors.o main.o -framework OpenGL -framework AppKit minilibx_opengl_20191021/libmlx.a -o fractol
+make: Leaving directory '/mnt/d/fractol'
  

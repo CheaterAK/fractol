@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   algorithms_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akocabas <akocabas@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 04:16:20 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/13 14:08:19 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/25 13:54:10 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./fract.h"
+#include "./fract_bonus.h"
 
 int	ft_mandelbrot(t_fract *fract, int x, int y, int scale)
 {
