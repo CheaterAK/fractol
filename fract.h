@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 08:57:32 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/25 13:56:41 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/25 22:50:02 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@
 
 enum {
 	mandelbrot = 1,
-	burningship = 2,
-	julia = 3,
-	tricorn = 4
+	julia = 3
 };
 
 enum {
@@ -33,7 +31,7 @@ enum {
 	key_r = 15,
 	key_g = 5,
 	key_b = 11,
-	key_tra = 17,
+	key_t = 17,
 	key_a = 0,
 	key_s = 1,
 	key_d = 2,
@@ -80,9 +78,6 @@ typedef struct s_fract
 	double		mv_y;
 	double		zoom;
 	t_data		img;
-	t_data		mini_fract1;
-	t_data		mini_fract2;
-	t_data		mini_fract3;
 	void		*prog;
 	void		*parent_window;
 	int			fract_type;
@@ -96,7 +91,6 @@ typedef struct s_fract
 	int			b;
 	int			o;
 	int			img_size;
-	int			mini_fract_size;
 	double		julia_x;
 	double		julia_y;
 	int			key_flag;
@@ -105,8 +99,6 @@ typedef struct s_fract
 
 int		ft_julia(t_fract *fract, int x, int y, int scale);
 int		ft_mandelbrot(t_fract *fract, int x, int y, int scale);
-int		ft_burningship(t_fract *fract, int x, int y, int scale);
-int		ft_tricorn(t_fract *fract, int x, int y, int scale);
 int		mouse_hook(int key, int x, int y, t_fract *fract);
 int		keydown(int key, t_fract *fract);
 void	draw_fract(t_fract *fract, int x, int y, int iter);
@@ -116,10 +108,6 @@ void	my_put_pixel(t_data *data, int x, int y, int color);
 int		color(t_fract *fract, int r, int g, int b);
 void	ft_chk_px(t_fract *fract);
 void	ft_color_init(t_fract *fract, int key);
-void	draw_mfract1(t_fract *fract, int x, int y);
-void	draw_mfract2(t_fract *fract, int x, int y);
-void	draw_mfract3(t_fract *fract, int x, int y);
-void	mfract_checkpx(t_fract *fract);
 void	fract_init(char *fract_name, t_fract *fract);
 int		ft_m_move(int x, int y, t_fract *fract);
 void	ft_init_prog(t_fract *fract);
