@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 08:58:06 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/27 17:26:57 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/27 17:32:50 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void	draw_fract(t_fract *fract, int x, int y, int iter)
 		else
 			my_put_pixel(&fract->img, x, y, 0x0);
 	}
+	
 	draw_fract2(fract, x, y, iter);
 }
 
