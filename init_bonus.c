@@ -6,11 +6,11 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 11:05:50 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/24 11:00:11 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/27 17:26:38 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./fract.h"
+#include "./fract_bonus.h"
 #include "minilibx_opengl_20191021/mlx.h"
 
 void	init_mfract(t_fract *fract)

@@ -6,7 +6,7 @@
 #    By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/13 10:18:18 by akocabas          #+#    #+#              #
-#    Updated: 2022/06/25 13:31:55 by akocabas         ###   ########.fr        #
+#    Updated: 2022/06/27 17:22:55 by akocabas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,6 @@ BONUS_OBJS = $(BONUS:.c=.o)
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 MLXFLAGS = -framework OpenGL -framework AppKit
-MLXFLAGSLINUX = -lmlx -lXext -lX11
 .PHONY: all clean fclean re bonus
 
 all: $(NAME)
@@ -32,10 +31,9 @@ $(NAME):  $(OBJS)
 %.o: %.c
 	$(CC) -c $^ $(CFLAGS)
 
-linux: $(OBJS)
-	$(CC) $(OBJS) $(MLXFLAGSLINUX) minilibx_opengl_20191021/libmlx.a -o $(NAME)
 clean:
 	rm -f $(OBJS) $(BONUS_OBJS)
+
 fclean: clean
 	rm -f $(OBJS) $(NAME)
 

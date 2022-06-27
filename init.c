@@ -6,28 +6,12 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 11:05:50 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/24 10:59:05 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/27 17:25:35 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./fract.h"
 #include"minilibx_opengl_20191021/mlx.h"
-
-void	init_mfract(t_fract *fract)
-{
-	if (fract->fract_type == julia)
-	{
-		fract->mini_fract1_type = burningship;
-		fract->mini_fract2_type = mandelbrot;
-		fract->mini_fract3_type = tricorn;
-	}
-	if (fract->fract_type == mandelbrot)
-	{
-		fract->mini_fract1_type = burningship;
-		fract->mini_fract2_type = julia;
-		fract->mini_fract3_type = tricorn;
-	}
-}
 
 void	color_init(t_fract *fract)
 {

@@ -6,11 +6,11 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 11:08:00 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/24 10:50:37 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/27 17:27:15 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./fract.h"
+#include "./fract_bonus.h"
 #include"minilibx_opengl_20191021/mlx.h"
 
 void	ft_mzoom(t_fract *fract, int key, int y, int x)
