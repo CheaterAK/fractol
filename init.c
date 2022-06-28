@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 11:05:50 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/28 04:10:08 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/28 06:45:32 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 void	fract_init(char *fract_name, t_fract *fract)
 {
-	color_init(fract);
 	if (!strcmp(fract_name, "Mandelbrot"))
 	{
 		fract->max_iteration = 150;

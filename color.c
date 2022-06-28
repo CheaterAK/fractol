@@ -6,13 +6,13 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 08:58:10 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/28 04:04:11 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/28 06:42:48 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./fract.h"
 
-int	color(t_fract *fract, int r, int g, int b)
+int	color(int r, int g, int b)
 {
 	int	o;
 

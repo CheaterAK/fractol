@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 04:16:20 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/28 04:00:52 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/28 06:42:12 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_mandelbrot(t_fract *fract, int x, int y, int scale)
 	{
 		fract->z.i = 2 * (fract->z.i * fract->z.r) + fract->c.i;
 		fract->z.r = r_sqr - i_sqr + fract->c.r;
-		r_sqr = (fract->z.r * fract->z.r) + fract->angle;
+		r_sqr = (fract->z.r * fract->z.r);
 		i_sqr = fract->z.i * fract->z.i;
 	}
 	return (iter);

@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 11:05:50 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/28 04:49:29 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/28 05:47:48 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,9 @@ void	color_init(t_fract *fract)
 
 void	fract_init2(char *fract_name, t_fract *fract)
 {
-	if (!strcmp(fract_name, "Tricorn"))
+	if (!strcmp(fract_name, "help"))
+		ft_help();
+	else if (!strcmp(fract_name, "Tricorn"))
 	{
 		fract->angle = 0;
 		fract->max_iteration = 100;
@@ -82,8 +84,6 @@ void	fract_init(char *fract_name, t_fract *fract)
 	color_init(fract);
 	fract->color_shift = 0;
 	fract->error = 1;
-	if (!strcmp(fract_name, "help"))
-		ft_help();
 	if (!strcmp(fract_name, "Mandelbrot"))
 	{
 		fract->max_iteration = 150;

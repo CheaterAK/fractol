@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 08:57:32 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/28 04:07:56 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/28 06:45:11 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,9 +99,8 @@ void	draw_fract(t_fract *fract, int x, int y, int iter);
 void	ft_chk_px(t_fract *fract);
 int		ft_destroy_it(t_fract *fract);
 void	my_put_pixel(t_data *data, int x, int y, int color);
-int		color(t_fract *fract, int r, int g, int b);
+int		color(int r, int g, int b);
 void	ft_chk_px(t_fract *fract);
-void	ft_color_init(t_fract *fract, int key);
 void	fract_init(char *fract_name, t_fract *fract);
 int		ft_m_move(int x, int y, t_fract *fract);
 void	ft_init_prog(t_fract *fract);

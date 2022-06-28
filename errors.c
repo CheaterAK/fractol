@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 03:46:28 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/28 04:41:44 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/28 06:49:04 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 void	ft_error_message(void)
 {
 	printf("Usage: ./fractol [fratals] [preset for julia]\nPreset is an optiona\
-l paramater.\n WARNING: \nIf you don't use a preset, the imaginary number and t\
-he real number are treated as 0.\n fratals :\n---> Mandelbrot\n---> Julia\n pre\
-sets:\n---> 1 = 0, -0.8i\n---> 2 = -0.4, 0.6i\n---> 3 = -0.70176, -0.3842i\n---\
-> 4 = 0.285, 0.01i\nExample Code : ./fractol Julia 2\n");
+l paramater.\n\"./fractol help\" for show keys.\n WARNING: \nIf you don't use a\
+ preset, the imaginary number and the real number are treated as 0.\n fratals :\
+ \n---> Mandelbrot\n---> Julia\n presets:\n---> 1 = 0, -0.8i\n---> 2 = -0.4, 0.\
+6i\n---> 3 = -0.70176, -0.3842i\n---> 4 = 0.285, 0.01i\nExample Code : ./fracto\
+l Julia 2\n");
 	exit(1);
 }
 
@@ -45,5 +46,6 @@ ner number on C.\nkey_a = Decrease 0.05 Julia's real number on C.\nkey_r = Add\\
 color.\nkey_t = Add\\remove transparancy.\nkey_n = Increase max iteration.\nkey\
 _m = Decrease max iteration.\nkey_up = Move up.\nkey_down = Move down.\nkey_lef\
 t = Move left.\nkey_right = Move right.\nkey_esc = Exit prog.\nkey_plus = Zoom \
-in.\nkey_minus = Zoom out.\n")
+in.\nkey_minus = Zoom out.\n");
+	exit(0);
 }
