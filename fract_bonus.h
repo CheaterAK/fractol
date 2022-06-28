@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 08:57:32 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/25 13:50:47 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/28 03:42:12 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
+# ifndef IMG_SIZE
+#  define IMG_SIZE (600)
+# endif
 
 enum
 {

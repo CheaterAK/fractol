@@ -6,7 +6,7 @@
 #    By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/13 10:18:18 by akocabas          #+#    #+#              #
-#    Updated: 2022/06/27 17:22:55 by akocabas         ###   ########.fr        #
+#    Updated: 2022/06/27 20:13:21 by akocabas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,6 @@ fclean: clean
 
 re: fclean $(NAME)
 
-bonus: $(OBJS) $(BONUS_OBJS)
+bonus: $(BONUS_OBJS)
 	gcc $(NAME)  $(BONUS_OBJS)
 

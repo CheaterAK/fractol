@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 08:57:32 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/25 22:50:02 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/28 04:07:56 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <string.h>
 # include <stdio.h>
 # include <stdlib.h>
+# ifndef IMG_SIZE
+#  define IMG_SIZE (600)
+# endif
 
 enum {
 	mandelbrot = 1,
@@ -81,15 +84,6 @@ typedef struct s_fract
 	void		*prog;
 	void		*parent_window;
 	int			fract_type;
-	int			mini_fract1_type;
-	int			mini_fract2_type;
-	int			mini_fract3_type;
-	double		angle;
-	int			color_shift;
-	int			r;
-	int			g;
-	int			b;
-	int			o;
 	int			img_size;
 	double		julia_x;
 	double		julia_y;

@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 04:16:20 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/25 13:54:10 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/28 04:11:36 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,21 +119,21 @@ void	ft_julia_preset(char preset, t_fract *fract)
 	if (preset == '1')
 	{
 		fract->julia_x = 0;
-		fract->julia_y = 0.8;
+		fract->julia_y = .8;
 	}
 	else if (preset == '2')
 	{
-		fract->julia_x = -0.4;
-		fract->julia_y = -0.6;
+		fract->julia_x = -.4;
+		fract->julia_y = -.6;
 	}
 	else if (preset == '3')
 	{
-		fract->julia_x = -0.70176;
-		fract->julia_y = -0.3842;
+		fract->julia_x = -.70176;
+		fract->julia_y = .3842;
 	}
 	else if (preset == '4')
 	{
-		fract->julia_x = 0.285;
-		fract->julia_y = 0.01;
+		fract->julia_x = .285;
+		fract->julia_y = -.01;
 	}
 }

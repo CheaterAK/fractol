@@ -6,25 +6,16 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 11:05:50 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/27 17:25:35 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/28 04:10:08 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./fract.h"
 #include"minilibx_opengl_20191021/mlx.h"
 
-void	color_init(t_fract *fract)
-{
-	fract->r = 1;
-	fract->g = 1;
-	fract->b = 1;
-	fract->o = 0;
-}
-
 void	fract_init(char *fract_name, t_fract *fract)
 {
 	color_init(fract);
-	fract->color_shift = 0;
 	if (!strcmp(fract_name, "Mandelbrot"))
 	{
 		fract->max_iteration = 150;
@@ -32,25 +23,25 @@ void	fract_init(char *fract_name, t_fract *fract)
 		fract->mv_y = 0;
 		fract->zoom = 1;
 		fract->fract_type = mandelbrot;
-		fract->angle = 0;
 	}
 	else if (!strcmp(fract_name, "Julia"))
 	{
-		fract->angle = 0;
 		fract->max_iteration = 100;
 		fract->mv_x = 0;
 		fract->mv_y = 0;
 		fract->zoom = 1;
 		fract->fract_type = julia;
 	}
-
+	else
+		ft_invalid_fract();
 }
 
 void	ft_init_prog(t_fract *fract)
 {
 	fract->prog = mlx_init();
-	fract->parent_window = mlx_new_window(fract->prog, 600, 600, "first_prog");
-	fract->img_size = 600;
+	fract->img_size = IMG_SIZE;
+	fract->parent_window = mlx_new_window(fract->prog, fract->img_size,
+			fract->img_size, "fract'ol");
 	fract->img.img = mlx_new_image(fract->prog, fract->img_size,
 			fract->img_size);
 	fract->img.addr = mlx_get_data_addr(fract->img.img, &fract->img.bpp,

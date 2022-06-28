@@ -6,14 +6,14 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 04:29:26 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/24 10:50:35 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/28 04:05:27 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./fract.h"
 #include"minilibx_opengl_20191021/mlx.h"
 
-void	ft_angle(t_fract *fract, int key)
+void	ft_juli(t_fract *fract, int key)
 {
 	if (key == key_w)
 		fract->julia_x += (.05 / fract->zoom);
@@ -57,7 +57,7 @@ int	keydown(int key, t_fract *fract)
 	if (key == key_esc)
 		ft_destroy_it(fract);
 	if (key == key_w || key == key_s || key == key_a || key == key_d)
-		ft_angle(fract, key);
+		ft_juli(fract, key);
 	ft_chk_px(fract);
 	return (0);
 }

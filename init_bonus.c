@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 11:05:50 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/27 17:26:38 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/28 03:45:15 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,13 +108,14 @@ void	fract_init(char *fract_name, t_fract *fract)
 void	ft_init_prog(t_fract *fract)
 {
 	fract->prog = mlx_init();
-	fract->parent_window = mlx_new_window(fract->prog, 800, 600, "first_prog");
-	fract->img_size = 600;
+	fract->img_size = IMG_SIZE;
+	fract->mini_fract_size = IMG_SIZE / 3;
+	fract->parent_window = mlx_new_window(fract->prog, (fract->img_size
+				+ fract->mini_fract_size), fract->img_size, "fract'ol");
 	fract->img.img = mlx_new_image(fract->prog, fract->img_size,
 			fract->img_size);
 	fract->img.addr = mlx_get_data_addr(fract->img.img, &fract->img.bpp,
 			&fract->img.line_len, &fract->img.endian);
-	fract->mini_fract_size = 200;
 	fract->mini_fract1.img = mlx_new_image(fract->prog, fract->mini_fract_size,
 			fract->mini_fract_size);
 	fract->mini_fract1.addr = mlx_get_data_addr(fract->mini_fract1.img,
