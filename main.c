@@ -6,9 +6,13 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 04:21:02 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/24 10:53:45 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/28 05:42:46 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+* Work perfect with minilibx_opengl_20191021
+*/
 
 #include "fract.h"
 #include "minilibx_opengl_20191021/mlx.h"

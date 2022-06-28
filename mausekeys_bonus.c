@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 11:08:00 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/27 17:27:15 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/28 05:41:23 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ void	ft_mzoom(t_fract *fract, int key, int y, int x)
 	if (key == scroll_down)
 	{
 		fract->zoom = .8 * fract->zoom;
-		fract->mv_y -= (((double)y / 800) / fract->zoom);
-		fract->mv_x -= (((double)x / 800) / fract->zoom);
+		fract->mv_y -= (((double)y / fract->img_size * .8) / fract->zoom);
+		fract->mv_x -= (((double)x / fract->img_size * .8) / fract->zoom);
 	}
 	if (key == scroll_up)
 	{
 		fract->zoom = 1.25 * fract->zoom;
-		fract->mv_y += (((double)y / 600) / fract->zoom);
-		fract->mv_x += (((double)x / 600) / fract->zoom);
+		fract->mv_y += ((double)y / fract->img_size / fract->zoom);
+		fract->mv_x += ((double)x / fract->img_size / fract->zoom);
 		fract->max_iteration *= 1.01;
 	}
 }
@@ -38,8 +38,8 @@ int	ft_m_move(int x, int y, t_fract *fract)
 	}
 	if (!fract->key_flag)
 		return (0);
-	fract->julia_x = (-1 + (double)x / 300) / fract->zoom;
-	fract->julia_y = (-1 + (double)y / 300) / fract->zoom;
+	fract->julia_x = (-1 + (double)x / (fract->img_size / 2)) / fract->zoom;
+	fract->julia_y = (-1 + (double)y / (fract->img_size / 2)) / fract->zoom;
 	ft_chk_px(fract);
 	return (1);
 }

@@ -6,11 +6,12 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 06:15:42 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/27 17:27:43 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/28 04:46:03 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./fract_bonus.h"
+#include "minilibx_opengl_20191021/mlx.h"
 
 void	draw_mfract3_2(t_fract *fract, int x, int y)
 {

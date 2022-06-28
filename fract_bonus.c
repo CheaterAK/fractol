@@ -6,11 +6,12 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 08:56:17 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/27 17:27:09 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/28 05:08:38 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./fract_bonus.h"
+#include "minilibx_opengl_20191021/mlx.h"
 
 void	my_put_pixel(t_data *data, int x, int y, int color)
 {

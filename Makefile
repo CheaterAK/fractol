@@ -6,7 +6,7 @@
 #    By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/13 10:18:18 by akocabas          #+#    #+#              #
-#    Updated: 2022/06/27 20:13:21 by akocabas         ###   ########.fr        #
+#    Updated: 2022/06/28 05:08:09 by akocabas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,5 +40,5 @@ fclean: clean
 re: fclean $(NAME)
 
 bonus: $(BONUS_OBJS)
-	gcc $(NAME)  $(BONUS_OBJS)
+	$(CC) $(BONUS_OBJS) $(MLXFLAGS) minilibx_opengl_20191021/libmlx.a -o $(NAME)
 

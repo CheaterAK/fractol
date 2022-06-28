@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 03:46:28 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/28 04:12:49 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/28 04:41:44 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,18 @@ void	ft_invalid_fract(void)
 {
 	printf("Invalid fractol\nTry valid one following like in the guide.\n");
 	ft_error_message();
+}
+
+void	ft_help(void)
+{
+	printf("key_1 = Set to main fractol Burningship.\nkey_2 = Set to main fract\
+ol Julia.\nkey_3 = Set to main fractol Mandelbrot.\nkey_4 = Set to main fractol\
+ Tricorn.\nkey_w = Increase 0.05 to Julia's imaginer number on C.\nkey_s = Decr\
+ease 0.05 Julia's imaginer number on C.\nkey_d = Increase 0.05 to Julia's imagi\
+ner number on C.\nkey_a = Decrease 0.05 Julia's real number on C.\nkey_r = Add\\
+\remove red color.\nkey_g = Add\\remove green color.\nkey_b = Add\\remove blue \
+color.\nkey_t = Add\\remove transparancy.\nkey_n = Increase max iteration.\nkey\
+_m = Decrease max iteration.\nkey_up = Move up.\nkey_down = Move down.\nkey_lef\
+t = Move left.\nkey_right = Move right.\nkey_esc = Exit prog.\nkey_plus = Zoom \
+in.\nkey_minus = Zoom out.\n")
 }
