@@ -6,14 +6,14 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 06:15:42 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/28 04:46:03 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/28 20:52:37 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./fract_bonus.h"
-#include "minilibx_opengl_20191021/mlx.h"
+#include "./mlx.h"
 
-void	draw_mfract3_2(t_fract *fract, int x, int y)
+void	ft_draw_mfract3_2(t_fract *fract, int x, int y)
 {
 	int	iter;
 
@@ -21,25 +21,25 @@ void	draw_mfract3_2(t_fract *fract, int x, int y)
 	{
 		iter = ft_burningship(fract, x, y, 3);
 		if (iter < (fract->max_iteration / 3))
-			my_put_pixel(&fract->mini_fract3, x, y,
-				color(fract, iter, iter, iter));
+			ft_my_put_pixel(&fract->mini_fract3, x, y,
+				ft_color(fract, iter));
 		else
-			my_put_pixel(&fract->mini_fract3, x, y, 0x0);
+			ft_my_put_pixel(&fract->mini_fract3, x, y, 0x0);
 	}
 	if (fract->mini_fract3_type == tricorn)
 	{
 		iter = ft_tricorn(fract, x, y, 3);
 		if (iter < (fract->max_iteration / 3))
-			my_put_pixel(&fract->mini_fract3, x, y,
-				color(fract, iter, iter, iter));
+			ft_my_put_pixel(&fract->mini_fract3, x, y,
+				ft_color(fract, iter));
 		else
-			my_put_pixel(&fract->mini_fract3, x, y, 0x0);
+			ft_my_put_pixel(&fract->mini_fract3, x, y, 0x0);
 	}
 	mlx_put_image_to_window(fract->prog, fract->parent_window,
 		fract->mini_fract3.img, fract->img_size, fract->mini_fract_size * 2);
 }
 
-void	draw_mfract3(t_fract *fract, int x, int y)
+void	ft_draw_mfract3(t_fract *fract, int x, int y)
 {
 	int	iter;
 
@@ -47,24 +47,24 @@ void	draw_mfract3(t_fract *fract, int x, int y)
 	{
 		iter = ft_mandelbrot(fract, x, y, 3);
 		if (iter < (fract->max_iteration / 3))
-			my_put_pixel(&fract->mini_fract3, x, y,
-				color(fract, iter, iter, iter));
+			ft_my_put_pixel(&fract->mini_fract3, x, y,
+				ft_color(fract, iter));
 		else
-			my_put_pixel(&fract->mini_fract3, x, y, 0x0);
+			ft_my_put_pixel(&fract->mini_fract3, x, y, 0x0);
 	}
 	if (fract->mini_fract3_type == julia)
 	{
 		iter = ft_julia(fract, x, y, 3);
 		if (iter < (fract->max_iteration / 3))
-			my_put_pixel(&fract->mini_fract3, x, y,
-				color(fract, iter, iter, iter));
+			ft_my_put_pixel(&fract->mini_fract3, x, y,
+				ft_color(fract, iter));
 		else
-			my_put_pixel(&fract->mini_fract3, x, y, 0x0);
+			ft_my_put_pixel(&fract->mini_fract3, x, y, 0x0);
 	}
-	draw_mfract3_2(fract, x, y);
+	ft_draw_mfract3_2(fract, x, y);
 }
 
-void	draw_mfract2_2(t_fract *fract, int x, int y)
+void	ft_draw_mfract2_2(t_fract *fract, int x, int y)
 {
 	int	iter;
 
@@ -72,25 +72,25 @@ void	draw_mfract2_2(t_fract *fract, int x, int y)
 	{
 		iter = ft_burningship(fract, x, y, 3);
 		if (iter < (fract->max_iteration / 3))
-			my_put_pixel(&fract->mini_fract2, x, y,
-				color(fract, iter, iter, iter));
+			ft_my_put_pixel(&fract->mini_fract2, x, y,
+				ft_color(fract, iter));
 		else
-			my_put_pixel(&fract->mini_fract2, x, y, 0x0);
+			ft_my_put_pixel(&fract->mini_fract2, x, y, 0x0);
 	}
 	if (fract->mini_fract2_type == tricorn)
 	{
 		iter = ft_tricorn(fract, x, y, 3);
 		if (iter < (fract->max_iteration / 3))
-			my_put_pixel(&fract->mini_fract2, x, y,
-				color(fract, iter, iter, iter));
+			ft_my_put_pixel(&fract->mini_fract2, x, y,
+				ft_color(fract, iter));
 		else
-			my_put_pixel(&fract->mini_fract2, x, y, 0x0);
+			ft_my_put_pixel(&fract->mini_fract2, x, y, 0x0);
 	}
 	mlx_put_image_to_window(fract->prog, fract->parent_window,
 		fract->mini_fract2.img, fract->img_size, fract->mini_fract_size * 1);
 }
 
-void	draw_mfract2(t_fract *fract, int x, int y)
+void	ft_draw_mfract2(t_fract *fract, int x, int y)
 {
 	int	iter;
 
@@ -98,19 +98,19 @@ void	draw_mfract2(t_fract *fract, int x, int y)
 	{
 		iter = ft_mandelbrot(fract, x, y, 3);
 		if (iter < (fract->max_iteration / 3))
-			my_put_pixel(&fract->mini_fract2, x, y,
-				color(fract, iter, iter, iter));
+			ft_my_put_pixel(&fract->mini_fract2, x, y,
+				ft_color(fract, iter));
 		else
-			my_put_pixel(&fract->mini_fract2, x, y, 0x0);
+			ft_my_put_pixel(&fract->mini_fract2, x, y, 0x0);
 	}
 	if (fract->mini_fract2_type == julia)
 	{
 		iter = ft_julia(fract, x, y, 3);
 		if (iter < (fract->max_iteration / 3))
-			my_put_pixel(&fract->mini_fract2, x, y,
-				color(fract, iter, iter, iter));
+			ft_my_put_pixel(&fract->mini_fract2, x, y,
+				ft_color(fract, iter));
 		else
-			my_put_pixel(&fract->mini_fract2, x, y, 0x0);
+			ft_my_put_pixel(&fract->mini_fract2, x, y, 0x0);
 	}
-	draw_mfract2_2(fract, x, y);
+	ft_draw_mfract2_2(fract, x, y);
 }

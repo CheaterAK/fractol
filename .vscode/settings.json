@@ -3,7 +3,8 @@
 	"files.associations": {
 		"mlx.h": "c",
 		"fract.h": "c",
-		"deque": "cpp"
+		"deque": "cpp",
+		"__node_handle": "c"
 	},
 	"makefile.launchConfigurations": [
 		{

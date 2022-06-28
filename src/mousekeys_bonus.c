@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mausekeys_bonus.c                                  :+:      :+:    :+:   */
+/*   mousekeys_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 11:08:00 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/28 05:41:23 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/28 21:17:32 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./fract_bonus.h"
-#include"minilibx_opengl_20191021/mlx.h"
+#include"./mlx.h"
 
 void	ft_mzoom(t_fract *fract, int key, int y, int x)
 {
@@ -41,10 +41,10 @@ int	ft_m_move(int x, int y, t_fract *fract)
 	fract->julia_x = (-1 + (double)x / (fract->img_size / 2)) / fract->zoom;
 	fract->julia_y = (-1 + (double)y / (fract->img_size / 2)) / fract->zoom;
 	ft_chk_px(fract);
-	return (1);
+	return (0);
 }
 
-int	mouse_hook(int key, int x, int y, t_fract *fract)
+int	ft_mouse_hook(int key, int x, int y, t_fract *fract)
 {
 	if (key == scroll_down || key == scroll_up)
 	{
@@ -54,12 +54,7 @@ int	mouse_hook(int key, int x, int y, t_fract *fract)
 		if (fract->color_shift++ == 2)
 			fract->color_shift = 0;
 	if (key == right_click)
-	{
-		if (fract->key_flag)
-			fract->key_flag = 0;
-		else
-			fract->key_flag = 1;
-	}
+		fract->key_flag = fract->key_flag ^ 1;
 	ft_chk_px(fract);
 	return (0);
 }

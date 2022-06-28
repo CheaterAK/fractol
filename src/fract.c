@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fract_bonus.c                                      :+:      :+:    :+:   */
+/*   fract.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 08:56:17 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/28 05:08:38 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/28 21:00:41 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./fract_bonus.h"
-#include "minilibx_opengl_20191021/mlx.h"
+#include "./fract.h"
+#include "./mlx.h"
 
-void	my_put_pixel(t_data *data, int x, int y, int color)
+void	ft_my_put_pixel(t_data *data, int x, int y, int color)
 {
 	char	*dst;
 
@@ -37,11 +37,7 @@ void	ft_chk_px(t_fract *fract)
 				iter = ft_julia(fract, x, y, 1);
 			else if (fract->fract_type == mandelbrot)
 				iter = ft_mandelbrot(fract, x, y, 1);
-			else if (fract->fract_type == burningship)
-				iter = ft_burningship(fract, x, y, 1);
-			else if (fract->fract_type == tricorn)
-				iter = ft_tricorn(fract, x, y, 1);
-			draw_fract(fract, x, y, iter);
+			ft_draw_fract(fract, x, y, iter);
 		}
 		y = -1;
 		x++;

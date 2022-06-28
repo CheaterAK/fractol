@@ -1,17 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_bonus.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 04:21:02 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/27 17:27:20 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/28 16:46:14 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fract_bonus.h"
-#include "minilibx_opengl_20191021/mlx.h"
+/*
+* Work only on minilibx_opengl_20191021
+*/
+
+#include "./fract.h"
+#include "./mlx.h"
 
 int	ft_destroy_it(t_fract *fract)
 {
@@ -41,10 +45,10 @@ int	main(int ac, char *av[])
 
 	ft_errors(ac, av, &fract);
 	ft_init_prog(&fract);
-	fract_init(av[1], &fract);
+	ft_fract_init(av[1], &fract);
 	ft_chk_px(&fract);
-	mlx_hook(fract.parent_window, 2, 0, keydown, &fract);
-	mlx_hook(fract.parent_window, 4, 0, mouse_hook, &fract);
+	mlx_hook(fract.parent_window, 2, 0, ft_keydown, &fract);
+	mlx_hook(fract.parent_window, 4, 0, ft_mouse_hook, &fract);
 	mlx_hook(fract.parent_window, 17, 0, ft_destroy_it, &fract);
 	mlx_hook(fract.parent_window, 6, 0, ft_m_move, &fract);
 	mlx_loop(fract.prog);

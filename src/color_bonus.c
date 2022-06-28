@@ -6,23 +6,26 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 08:58:10 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/27 17:27:51 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/28 20:39:04 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./fract_bonus.h"
 
-int	color(t_fract *fract, int r, int g, int b)
+int	ft_color(t_fract *fract, int iter)
 {
 	int	o;
+	int	r;
+	int	g;
+	int	b;
 
 	o = 180;
-	r *= fract->r;
-	g *= fract->g;
-	b *= fract->b;
-	r *= 10;
-	g *= 15;
-	b *= 20;
+	r = iter;
+	g = iter;
+	b = iter;
+	r *= fract->r * 10;
+	g *= fract->g * 15;
+	b *= fract->b * 20;
 	r %= 256;
 	g %= 256;
 	b %= 256;

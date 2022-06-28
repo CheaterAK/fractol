@@ -6,14 +6,14 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 11:05:50 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/28 06:45:32 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/28 19:12:21 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./fract.h"
-#include"minilibx_opengl_20191021/mlx.h"
+#include "./mlx.h"
 
-void	fract_init(char *fract_name, t_fract *fract)
+void	ft_fract_init(char *fract_name, t_fract *fract)
 {
 	if (!strcmp(fract_name, "Mandelbrot"))
 	{

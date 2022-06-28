@@ -6,14 +6,14 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 11:05:50 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/28 05:47:48 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/28 16:45:51 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./fract_bonus.h"
-#include "minilibx_opengl_20191021/mlx.h"
+#include "./mlx.h"
 
-void	init_mfract(t_fract *fract)
+void	ft_init_mfract(t_fract *fract)
 {
 	if (fract->fract_type == burningship)
 	{
@@ -39,7 +39,7 @@ void	init_mfract(t_fract *fract)
 		fract->mini_fract2_type = julia;
 		fract->mini_fract3_type = mandelbrot;
 	}
-	mfract_checkpx(fract);
+	ft_mfract_checkpx(fract);
 }
 
 void	color_init(t_fract *fract)
@@ -50,7 +50,7 @@ void	color_init(t_fract *fract)
 	fract->o = 0;
 }
 
-void	fract_init2(char *fract_name, t_fract *fract)
+void	ft_fract_init2(char *fract_name, t_fract *fract)
 {
 	if (!strcmp(fract_name, "help"))
 		ft_help();
@@ -76,10 +76,10 @@ void	fract_init2(char *fract_name, t_fract *fract)
 	}
 	else if (fract->error)
 		ft_invalid_fract();
-	init_mfract(fract);
+	ft_init_mfract(fract);
 }
 
-void	fract_init(char *fract_name, t_fract *fract)
+void	ft_fract_init(char *fract_name, t_fract *fract)
 {
 	color_init(fract);
 	fract->color_shift = 0;
@@ -104,7 +104,7 @@ void	fract_init(char *fract_name, t_fract *fract)
 		fract->fract_type = burningship;
 		fract->error = 0;
 	}
-	fract_init2(fract_name, fract);
+	ft_fract_init2(fract_name, fract);
 }
 
 void	ft_init_prog(t_fract *fract)

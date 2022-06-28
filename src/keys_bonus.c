@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   keys.c                                             :+:      :+:    :+:   */
+/*   keys_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 04:29:26 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/28 04:05:27 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/28 21:05:47 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./fract.h"
-#include"minilibx_opengl_20191021/mlx.h"
+#include "./fract_bonus.h"
+#include "./mlx.h"
 
-void	ft_juli(t_fract *fract, int key)
+void	ft_angle(t_fract *fract, int key)
 {
 	if (key == key_w)
 		fract->julia_x += (.05 / fract->zoom);
@@ -27,13 +27,13 @@ void	ft_juli(t_fract *fract, int key)
 
 void	ft_zoom(t_fract *fract, int key)
 {
-	if (key == key_minus || key == scroll_down)
+	if (key == key_minus)
 	{
 		fract->zoom = .8 * fract->zoom;
 		fract->mv_y -= (.4 / fract->zoom);
 		fract->mv_x -= (.4 / fract->zoom);
 	}
-	if (key == key_plus || key == scroll_up)
+	if (key == key_plus)
 	{
 		fract->zoom = 1.25 * fract->zoom;
 		fract->mv_y += (.5 / fract->zoom);
@@ -42,7 +42,19 @@ void	ft_zoom(t_fract *fract, int key)
 	}
 }
 
-int	keydown(int key, t_fract *fract)
+void	ft_reinit(t_fract *fract, int key)
+{
+	if (key == key_1)
+		ft_fract_init("Burningship", fract);
+	if (key == key_2)
+		ft_fract_init("Julia", fract);
+	if (key == key_3)
+		ft_fract_init("Mandelbrot", fract);
+	if (key == key_4)
+		ft_fract_init("Tricorn", fract);
+}
+
+int	ft_keydown(int key, t_fract *fract)
 {
 	if (key == key_left)
 		fract->mv_x -= (.1 / fract->zoom);
@@ -54,43 +66,18 @@ int	keydown(int key, t_fract *fract)
 		fract->mv_y += (.1 / fract->zoom);
 	if (key == key_minus || key == key_plus)
 		ft_zoom(fract, key);
+	if (key == key_1 || key == key_2 || key == key_3 || key == key_4)
+		ft_reinit(fract, key);
+	if (key == key_n)
+		fract->max_iteration++;
 	if (key == key_esc)
 		ft_destroy_it(fract);
+	if (key == key_m)
+		fract->max_iteration--;
 	if (key == key_w || key == key_s || key == key_a || key == key_d)
-		ft_juli(fract, key);
-	ft_chk_px(fract);
-	return (0);
-}
-
-int	ft_m_move(int x, int y, t_fract *fract)
-{
-	if ((x >= fract->img_size || x < 0) || y >= fract->img_size || y < 0)
-	{
-		return (0);
-	}
-	if (!fract->key_flag)
-		return (0);
-	fract->julia_x = (-1 + (double)x / 300) / fract->zoom;
-	fract->julia_y = (-1 + (double)y / 300) / fract->zoom;
-	ft_chk_px(fract);
-	return (1);
-}
-
-int	mouse_hook(int key, int x, int y, t_fract *fract)
-{
-	if (key == scroll_down || key == scroll_up)
-	{
-		ft_zoom(fract, key);
-	}
-	if (key == right_click)
-	{
-		if (fract->key_flag)
-			fract->key_flag = 0;
-		else
-			fract->key_flag = 1;
-	}
-	x = 0;
-	y = 0;
+		ft_angle(fract, key);
+	if (key == key_r || key == key_g || key == key_b || key == key_t)
+		ft_color_init(fract, key);
 	ft_chk_px(fract);
 	return (0);
 }

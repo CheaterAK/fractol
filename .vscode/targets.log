@@ -8,9 +8,10 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Tue Jun 28 07:41:22 2022
+# Make data base, printed on Tue Jun 28 20:46:20 2022
 
 # Variables
+ 
 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
@@ -34,24 +35,34 @@ SHELL = /bin/sh
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
 _ = /usr/bin/make
-# makefile (from `Makefile', line 27)
-CFLAGS = -Wall -Wextra -Werror
 # makefile (from `Makefile', line 14)
 NAME_BONUS = fractol_bonus
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
+# makefile (from `Makefile', line 16)
+LIBMLX_DIR = ./minilibx_opengl_20191021/
+# makefile (from `Makefile', line 23)
+OBJ_DIR = ./obj/
+# makefile (from `Makefile', line 38)
+BSRCS = $(addprefix $(SRC_DIR), $(BSRC_FILES))
 # environment
 VSCODE_VERBOSE_LOGGING = true
-# makefile (from `Makefile', line 17)
-OBJS = $(SRCS:.c=.o)
+# makefile (from `Makefile', line 36)
+OBJS = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
+# makefile (from `Makefile', line 19)
+LIBPRINTF = $(addprefix $(LIBPRINTF_DIR), libftprintf.a)
 # environment
 P9K_SSH = 0
 # environment
 VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000c_v40032ps/T/vscode-ipc-8691b716-c49e-4b2d-ad78-f34862701863.sock
 # environment
 VSCODE_CWD = /
+# makefile (from `Makefile', line 26)
+OBJ_FILES = $(SRC_FILES:.c=.o)
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/akocabas/.fzf/bin
+# makefile (from `Makefile', line 42)
+MLX_AND_FLAGS = $(LIBMLX) $(LIBPRINTF) -Wall -Wextra -Werror -framework OpenGL -framework AppKit
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
@@ -60,22 +71,26 @@ VSCODE_LOG_STACK = false
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# makefile (from `Makefile', line 18)
+LIBMLX = $(addprefix $(LIBMLX_DIR), libmlx.a)
 # environment
 SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.3sq8UeguLf/Listeners
 # automatic
 %F = $(notdir $%)
-# makefile (from `Makefile', line 28)
-MLXFLAGS = -framework OpenGL -framework AppKit
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
 PWD = /Users/akocabas/fractol
+# makefile (from `Makefile', line 39)
+BOBJS = $(addprefix $(OBJ_DIR), $(BOBJ_FILES))
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 HOME = /Users/akocabas
+# makefile (from `Makefile', line 30)
+BSRC_FILES = algorithms_bonus.c color_bonus.c draw_bonus.c drawm_bonus.c errors_bonus.c fract_bonus.c init_bonus.c keys_bonus.c main_bonus.c mousekeys_bonus.c
 # default
 MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
@@ -84,6 +99,8 @@ VSCODE_CODE_CACHE_PATH = /Users/akocabas/Library/Application Support/Code/Cached
 LOGNAME = akocabas
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# makefile (from `Makefile', line 33)
+BOBJ_FILES = $(BSRC_FILES:.c=.o)
 # environment
 ZSH = /Users/akocabas/.oh-my-zsh
 # environment
@@ -96,11 +113,11 @@ XPC_FLAGS = 0x0
 MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
-# makefile (from `Makefile', line 16)
-SRCS = algorithms.c color.c draw.c fract.c init.c keys.c errors.c main.c
+# makefile (from `Makefile', line 35)
+SRCS = $(addprefix $(SRC_DIR), $(SRC_FILES))
 # environment
 SHLVL = 1
-# makefile (from `Makefile', line 26)
+# makefile (from `Makefile', line 41)
 CC = gcc
 # default
 MAKE_VERSION := 3.81
@@ -134,7 +151,7 @@ MFLAGS = -Rrqp
 XPC_SERVICE_NAME = com.microsoft.VSCode.2380
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
-# makefile (from `Makefile', line 19)
+# makefile (from `Makefile', line 28)
 IMG_SIZE = 600
 # automatic
 +F = $(notdir $+)
@@ -144,18 +161,18 @@ __CF_USER_TEXT_ENCODING = 0x18AD9:0x0:0x0
 MAKEFILES := 
 # environment
 ZNT_CONFIG_DIR = /Users/akocabas/.config/znt
+# makefile (from `Makefile', line 21)
+SRC_DIR = ./src/
 # automatic
 <F = $(notdir $<)
-# makefile (from `Makefile', line 24)
-BONUS_OBJS = $(BONUS_SRC:.c=.o)
 # environment
 PAGER = less
 # environment
 LC_ALL = C
-# makefile (from `Makefile', line 21)
-BONUS_SRC = algorithms_bonus.c color_bonus.c draw_bonus.c drawm_bonus.c errors_bonus.c fract_bonus.c init_bonus.c keys_bonus.c main_bonus.c mausekeys_bonus.c
 # automatic
 ^F = $(notdir $^)
+# makefile (from `Makefile', line 25)
+SRC_FILES = algorithms.c color.c draw.c fract.c init.c keys.c errors.c main.c
 # default
 SUFFIXES := 
 # default
@@ -166,8 +183,10 @@ MAKELEVEL := 0
 LANG = C
 # environment
 VSCODE_PID = 84528
+# makefile (from `Makefile', line 17)
+LIBPRINTF_DIR = ./ft_printf/
 # variable set hash-table stats:
-# Load=77/1024=8%, Rehash=0, Collisions=5/115=4%
+# Load=86/1024=8%, Rehash=0, Collisions=10/141=7%
 
 # Pattern-specific Variable Values
 
@@ -175,58 +194,127 @@ VSCODE_PID = 84528
 
 # Directories
 
-# . (device 16777225, inode 1355464): 41 files, no impossibilities.
+# . (device 16777225, inode 1355464): 13 files, no impossibilities.
+# ./src (device 16777225, inode 1372688): 20 files, no impossibilities so far.
+# src (device 16777225, inode 1372688): 20 files, no impossibilities so far.
 
-# 41 files, no impossibilities in 1 directories.
+# 53 files, no impossibilities in 3 directories.
 
 # Implicit Rules
 
-%.o: %.c
-#  commands to execute (from `Makefile', line 42):
-	$(CC) -c $^ $(CFLAGS) -D IMG_SIZE=$(IMG_SIZE)
+obj/%.o: ./src/%.c
+#  commands to execute (from `Makefile', line 65):
+	@mkdir -p $(OBJ_DIR)
+	@$(CC) -c $^ -I $(LIBPRINTF_DIR) -I $(LIBMLX_DIR) -D IMG_SIZE=$(IMG_SIZE) -o $@
 	
 
 # 1 implicit rules, 0 (0.0%) terminal.
 
 # Files
 
-fractol: algorithms.o color.o draw.o fract.o init.o keys.o errors.o main.o
-#  Implicit rule search has not been done.
-#  File does not exist.
+obj/draw.o: src/draw.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `draw'
+#  Last modified 2022-06-28 20:37:32
 #  File has been updated.
-#  Needs to be updated (-q is set).
+#  Successfully updated.
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
-#  commands to execute (from `Makefile', line 34):
-	$(CC) $(OBJS) ${CFLAGS} $(MLXFLAGS) minilibx_opengl_20191021/libmlx.a -o $(NAME)
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 65):
+	@mkdir -p $(OBJ_DIR)
+	@$(CC) -c $^ -I $(LIBPRINTF_DIR) -I $(LIBMLX_DIR) -D IMG_SIZE=$(IMG_SIZE) -o $@
 	
 
 # Not a target:
-fract.o:
+obj/mousekeys_bonus.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-all: fractol
+fractol: minilibx_opengl_20191021/libmlx.a ft_printf/libftprintf.a obj/algorithms.o obj/color.o obj/draw.o obj/fract.o obj/init.o obj/keys.o obj/errors.o obj/main.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-28 20:37:32
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 54):
+	@$(CC) $(OBJS) $(MLX_AND_FLAGS) -o $(NAME)
+	@echo "fractol compiled."
+	
+
+# Not a target:
+obj/keys_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+obj/algorithms.o: src/algorithms.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `algorithms'
+#  Last modified 2022-06-28 20:37:32
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 65):
+	@mkdir -p $(OBJ_DIR)
+	@$(CC) -c $^ -I $(LIBPRINTF_DIR) -I $(LIBMLX_DIR) -D IMG_SIZE=$(IMG_SIZE) -o $@
+	
+
+# Not a target:
+obj/color_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: ft_printf/libftprintf.a minilibx_opengl_20191021/libmlx.a fractol
 #  Phony target (prerequisite of .PHONY).
 #  Command-line target.
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
-#  Needs to be updated (-q is set).
+#  Successfully updated.
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+obj/fract_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 .PHONY: all clean fclean re bonus
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-algorithms_bonus.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+obj/errors.o: src/errors.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `errors'
+#  Last modified 2022-06-28 20:37:32
+#  File has been updated.
+ 
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 65):
+	@mkdir -p $(OBJ_DIR)
+	@$(CC) -c $^ -I $(LIBPRINTF_DIR) -I $(LIBMLX_DIR) -D IMG_SIZE=$(IMG_SIZE) -o $@
+	
+
+obj/main.o: src/main.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `main'
+#  Last modified 2022-06-28 20:37:32
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 65):
+	@mkdir -p $(OBJ_DIR)
+	@$(CC) -c $^ -I $(LIBPRINTF_DIR) -I $(LIBMLX_DIR) -D IMG_SIZE=$(IMG_SIZE) -o $@
+	
 
 # Not a target:
 .SUFFIXES:
@@ -235,28 +323,82 @@ algorithms_bonus.o:
 #  File has not been updated.
 
 # Not a target:
-color_bonus.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-errors.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-Makefile:
+src/draw.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-28 07:27:32
+#  Last modified 2022-06-28 08:14:06
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-mausekeys_bonus.o:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 20:45:47
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+src/algorithms.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 06:42:12
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+obj/keys.o: src/keys.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `keys'
+#  Last modified 2022-06-28 20:37:32
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 65):
+	@mkdir -p $(OBJ_DIR)
+	@$(CC) -c $^ -I $(LIBPRINTF_DIR) -I $(LIBMLX_DIR) -D IMG_SIZE=$(IMG_SIZE) -o $@
+	
+
+obj/color.o: src/color.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `color'
+#  Last modified 2022-06-28 20:37:32
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 65):
+	@mkdir -p $(OBJ_DIR)
+	@$(CC) -c $^ -I $(LIBPRINTF_DIR) -I $(LIBMLX_DIR) -D IMG_SIZE=$(IMG_SIZE) -o $@
+	
+
+obj/fract.o: src/fract.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `fract'
+#  Last modified 2022-06-28 20:37:32
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 65):
+	@mkdir -p $(OBJ_DIR)
+	@$(CC) -c $^ -I $(LIBPRINTF_DIR) -I $(LIBMLX_DIR) -D IMG_SIZE=$(IMG_SIZE) -o $@
+	
+
+# Not a target:
+src/errors.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 18:49:41
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+obj/init_bonus.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -267,85 +409,62 @@ bonus: fractol_bonus
 #  File does not exist.
 #  File has not been updated.
 
-# Not a target:
-init_bonus.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
 fclean: clean
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 48):
-	rm -f $(NAME) $(NAME_BONUS)
+#  commands to execute (from `Makefile', line 73):
+	@rm -f $(NAME) $(NAME_BONUS)
 	
 
-algorithms.o: algorithms.c
+# Not a target:
+src/main.c:
 #  Implicit rule search has been done.
-#  Implicit/static pattern stem: `algorithms'
-#  File does not exist.
+#  Last modified 2022-06-28 16:46:14
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := algorithms.o
-# automatic
-# % := 
-# automatic
-# * := algorithms
-# automatic
-# + := algorithms.c
-# automatic
-# | := 
-# automatic
-# < := algorithms.c
-# automatic
-# ^ := algorithms.c
-# automatic
-# ? := algorithms.c
+#  Successfully updated.
 # variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
-#  commands to execute (from `Makefile', line 42):
-	$(CC) -c $^ $(CFLAGS) -D IMG_SIZE=$(IMG_SIZE)
-	
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-color.o:
+obj/drawm_bonus.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-main_bonus.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-draw_bonus.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/keys.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 16:46:03
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
 .DEFAULT:
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-drawm_bonus.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/color.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 20:36:40
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-keys_bonus.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/fract.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 16:45:46
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 re: fclean fractol
 #  Phony target (prerequisite of .PHONY).
@@ -358,65 +477,86 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 45):
-	rm -f $(OBJS) $(BONUS_OBJS)
+#  commands to execute (from `Makefile', line 69):
+	@rm -f $(OBJS) $(BOBJS)
+	@rm -rf $(OBJ_DIR)
 	
 
-# Not a target:
-init.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-fract_bonus.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-fractol_bonus: algorithms_bonus.o color_bonus.o draw_bonus.o drawm_bonus.o errors_bonus.o fract_bonus.o init_bonus.o keys_bonus.o main_bonus.o mausekeys_bonus.o
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `Makefile', line 39):
-	$(CC) $(BONUS_OBJS) $(CFLAGS) $(MLXFLAGS) minilibx_opengl_20191021/libmlx.a -o $(NAME_BONUS)
-	
-
-# Not a target:
-main.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-draw.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-algorithms.c:
+obj/init.o: src/init.c
 #  Implicit rule search has been done.
-#  Last modified 2022-06-28 06:42:12
+#  Implicit/static pattern stem: `init'
+#  Last modified 2022-06-28 20:37:32
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 65):
+	@mkdir -p $(OBJ_DIR)
+	@$(CC) -c $^ -I $(LIBPRINTF_DIR) -I $(LIBMLX_DIR) -D IMG_SIZE=$(IMG_SIZE) -o $@
+	
+
+# Not a target:
+obj/draw_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+fractol_bonus: minilibx_opengl_20191021/libmlx.a ft_printf/libftprintf.a obj/algorithms_bonus.o obj/color_bonus.o obj/draw_bonus.o obj/drawm_bonus.o obj/errors_bonus.o obj/fract_bonus.o obj/init_bonus.o obj/keys_bonus.o obj/main_bonus.o obj/mousekeys_bonus.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 61):
+	@$(CC) $(BOBJS) $(MLX_AND_FLAGS) -o $(NAME_BONUS)
+	@echo "fractol_bonus compiled."
+	
+
+# Not a target:
+obj/algorithms_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+minilibx_opengl_20191021/libmlx.a:
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-28 16:29:58
+#  File has been updated.
+#  Successfully updated.
+#  commands to execute (from `Makefile', line 51):
+	make -sC $(LIBMLX_DIR)
+	
+
+# Not a target:
+obj/errors_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ft_printf/libftprintf.a:
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-28 18:35:08
+#  File has been updated.
+#  Successfully updated.
+#  commands to execute (from `Makefile', line 48):
+	make -sC $(LIBPRINTF_DIR)
+	
+
+# Not a target:
+src/init.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-28 19:12:21
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
-keys.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-errors_bonus.o:
+obj/main_bonus.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=30/1024=3%, Rehash=0, Collisions=2/74=3%
+# Load=39/1024=4%, Rehash=0, Collisions=4/110=4%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -428,6 +568,6 @@ errors_bonus.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue Jun 28 07:41:22 2022
+# Finished Make data base on Tue Jun 28 20:46:20 2022
 
  

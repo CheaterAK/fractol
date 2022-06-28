@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw.c                                             :+:      :+:    :+:   */
+/*   color.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/26 08:58:06 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/28 06:44:30 by akocabas         ###   ########.fr       */
+/*   Created: 2022/05/26 08:58:10 by akocabas          #+#    #+#             */
+/*   Updated: 2022/06/28 20:36:40 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./fract.h"
 
-void	draw_fract(t_fract *fract, int x, int y, int iter)
+int	ft_color(int r, int g, int b)
 {
-	if (fract->fract_type == mandelbrot)
-	{
-		if (iter < fract->max_iteration)
-			my_put_pixel(&fract->img, x, y, color(iter, iter, iter));
-		else
-			my_put_pixel(&fract->img, x, y, 0x0);
-	}
-	if (fract->fract_type == julia)
-	{
-		if (iter < fract->max_iteration)
-			my_put_pixel(&fract->img, x, y, color(iter, iter, iter));
-		else
-			my_put_pixel(&fract->img, x, y, 0x0);
-	}
+	int	o;
+
+	o = 0;
+	r *= 1;
+	g *= 2;
+	b *= 3;
+	r %= 256;
+	g %= 256;
+	b %= 256;
+	return (b | g << 8 | r << 16 | o << 24);
 }
