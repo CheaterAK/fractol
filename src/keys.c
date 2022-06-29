@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 04:29:26 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/28 16:46:03 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/28 22:12:06 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,12 +83,7 @@ int	ft_mouse_hook(int key, int x, int y, t_fract *fract)
 		ft_zoom(fract, key);
 	}
 	if (key == right_click)
-	{
-		if (fract->key_flag)
-			fract->key_flag = 0;
-		else
-			fract->key_flag = 1;
-	}
+		fract->key_flag = fract->key_flag ^ 1;
 	x = 0;
 	y = 0;
 	ft_chk_px(fract);

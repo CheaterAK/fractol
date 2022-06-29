@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 11:05:50 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/28 19:12:21 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/28 22:18:34 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 void	ft_fract_init(char *fract_name, t_fract *fract)
 {
-	if (!strcmp(fract_name, "Mandelbrot"))
+	if (!strcmp(fract_name, "help"))
+		ft_help();
+	else if (!strcmp(fract_name, "Mandelbrot"))
 	{
 		fract->max_iteration = 150;
 		fract->mv_x = 0;
