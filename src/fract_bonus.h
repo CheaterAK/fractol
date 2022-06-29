@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 08:57:32 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/28 08:25:44 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/29 10:54:50 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,7 @@ int				ft_julia(t_fract *fract, int x, int y, int scale);
 int				ft_mandelbrot(t_fract *fract, int x, int y, int scale);
 int				ft_burningship(t_fract *fract, int x, int y, int scale);
 int				ft_tricorn(t_fract *fract, int x, int y, int scale);
+int				ft_buddhabrot(t_fract *info, int x, int y);
 int				ft_mouse_hook(int key, int x, int y, t_fract *fract);
 int				ft_keydown(int key, t_fract *fract);
 void			ft_draw_fract(t_fract *fract, int x, int y, int iter);

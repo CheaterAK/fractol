@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 04:16:20 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/28 04:11:36 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/29 13:45:41 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_mandelbrot(t_fract *fract, int x, int y, int scale)
 	iter = -1;
 	r_sqr = 0;
 	i_sqr = 0;
-	while (r_sqr + i_sqr <= 8 && ++iter < (fract->max_iteration / scale))
+	while (r_sqr + i_sqr <= 4 && ++iter < (fract->max_iteration / scale))
 	{
 		fract->z.i = 2 * (fract->z.i * fract->z.r) + fract->c.i;
 		fract->z.r = r_sqr - i_sqr + fract->c.r ;
