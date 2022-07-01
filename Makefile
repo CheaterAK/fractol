@@ -58,12 +58,12 @@ $(NAME): $(LIBMLX) $(LIBPRINTF) $(OBJS)
 bonus: $(NAME_BONUS)
 
 ${NAME_BONUS} : $(LIBMLX) $(LIBPRINTF) $(BOBJS)
-	@$(CC) $(BOBJS) $(MLX_AND_FLAGS) -o $(NAME_BONUS)
+	@$(CC) $(BOBJS) $(MLX_AND_FLAGS) -o $(NAME_BONUS) -g
 	@echo "fractol_bonus compiled."
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(OBJ_DIR)
-	@$(CC) -c $^ -I $(LIBPRINTF_DIR) -I $(LIBMLX_DIR) -D IMG_SIZE=$(IMG_SIZE) -o $@
+	@$(CC) -c $^ -I $(LIBPRINTF_DIR) -I $(LIBMLX_DIR) -D IMG_SIZE=$(IMG_SIZE) -o $@ -g
 
 clean:
 	@rm -f $(OBJS) $(BOBJS)

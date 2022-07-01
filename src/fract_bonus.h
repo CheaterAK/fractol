@@ -6,14 +6,13 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 08:57:32 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/29 10:54:50 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/07/01 09:25:35 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACT_BONUS_H
 # define FRACT_BONUS_H
 
-# include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
 # ifndef IMG_SIZE

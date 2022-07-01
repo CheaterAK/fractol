@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 04:29:26 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/28 22:12:06 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/06/30 19:26:16 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ int	ft_m_move(int x, int y, t_fract *fract)
 	}
 	if (!fract->key_flag)
 		return (0);
-	fract->julia_x = (-1 + (double)x / 300) / fract->zoom;
-	fract->julia_y = (-1 + (double)y / 300) / fract->zoom;
+	fract->julia_x = (-1 + (double)x / (fract->img_size / 2)) / fract->zoom;
+	fract->julia_y = (-1 + (double)y / (fract->img_size / 2)) / fract->zoom;
 	ft_chk_px(fract);
 	return (1);
 }

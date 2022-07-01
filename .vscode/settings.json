@@ -11,6 +11,11 @@
 			"cwd": "/mnt/d/fractol",
 			"binaryPath": "/mnt/d/fractol/fractol",
 			"binaryArgs": []
+		},
+		{
+			"cwd": "/Users/akocabas/fractol",
+			"binaryPath": "/Users/akocabas/fractol/fractol",
+			"binaryArgs": []
 		}
 	]
 }
