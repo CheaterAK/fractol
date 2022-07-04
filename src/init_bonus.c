@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 11:05:50 by akocabas          #+#    #+#             */
-/*   Updated: 2022/07/01 09:24:50 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/07/04 05:53:47 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	color_init(t_fract *fract)
 	fract->g = 1;
 	fract->b = 1;
 	fract->o = 0;
+	fract->key_flag = 0;
 }
 
 void	ft_fract_init2(char *fract_name, t_fract *fract)

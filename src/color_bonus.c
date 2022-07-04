@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 08:58:10 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/28 20:39:04 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/07/03 21:29:03 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,6 @@ void	ft_color_init(t_fract *fract, int key)
 		fract->g = (fract->g ^ 1);
 	if (key == key_b)
 		fract->b = (fract->b ^ 1);
-	if (key == key_t)
+	if (key == key_tra)
 		fract->o = (fract->o ^ 1);
 }

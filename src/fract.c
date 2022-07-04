@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 08:56:17 by akocabas          #+#    #+#             */
-/*   Updated: 2022/07/01 09:25:15 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/07/04 04:58:12 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ void	ft_chk_px(t_fract *fract)
 	int	y;
 	int	iter;
 
-	x = 0;
-	y = 0;
-	while (x < fract->img_size)
+	x = -1;
+	y = -1;
+	while (++x < fract->img_size)
 	{
 		while (++y < fract->img_size)
 		{
@@ -40,7 +40,6 @@ void	ft_chk_px(t_fract *fract)
 			ft_draw_fract(fract, x, y, iter);
 		}
 		y = -1;
-		x++;
 	}
 	mlx_put_image_to_window(fract->prog, fract->parent_window, fract->img.img,
 		0, 0);

@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 11:08:00 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/28 21:17:32 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/07/04 09:46:48 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int	ft_m_move(int x, int y, t_fract *fract)
 
 int	ft_mouse_hook(int key, int x, int y, t_fract *fract)
 {
+	printf("%d\n", key);
 	if (key == scroll_down || key == scroll_up)
 	{
 		ft_mzoom(fract, key, y, x);
@@ -54,7 +55,7 @@ int	ft_mouse_hook(int key, int x, int y, t_fract *fract)
 		if (fract->color_shift++ == 2)
 			fract->color_shift = 0;
 	if (key == right_click)
-		fract->key_flag = fract->key_flag ^ 1;
+		fract->key_flag ^= 1;
 	ft_chk_px(fract);
 	return (0);
 }

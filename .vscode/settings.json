@@ -4,7 +4,9 @@
 		"mlx.h": "c",
 		"fract.h": "c",
 		"deque": "cpp",
-		"__node_handle": "c"
+		"__node_handle": "c",
+		"ft_printf.h": "c",
+		"fract_bonus.h": "c"
 	},
 	"makefile.launchConfigurations": [
 		{

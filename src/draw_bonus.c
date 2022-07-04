@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 08:58:06 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/28 20:54:07 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/07/04 05:03:18 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,20 +75,24 @@ void	ft_mfract_checkpx(t_fract *fract)
 	int	x;
 	int	y;
 
-	x = 0;
-	y = 0;
-	while (x < fract->mini_fract_size)
+	x = -1;
+	y = -1;
+	while (++x < fract->mini_fract_size)
 	{
-		while (y < fract->mini_fract_size)
+		while (++y < fract->mini_fract_size)
 		{
 			ft_draw_mfract1(fract, x, y);
 			ft_draw_mfract2(fract, x, y);
 			ft_draw_mfract3(fract, x, y);
-			y++;
 		}
-		y = 0;
-		x++;
+		y = -1;
 	}
+	mlx_put_image_to_window(fract->prog, fract->parent_window,
+		fract->mini_fract3.img, fract->img_size, fract->mini_fract_size * 2);
+	mlx_put_image_to_window(fract->prog, fract->parent_window,
+		fract->mini_fract2.img, fract->img_size, fract->mini_fract_size * 1);
+	mlx_put_image_to_window(fract->prog, fract->parent_window,
+		fract->mini_fract1.img, fract->img_size, fract->mini_fract_size * 0);
 }
 
 void	ft_draw_mfract1_2(t_fract *fract, int x, int y)
@@ -113,8 +117,6 @@ void	ft_draw_mfract1_2(t_fract *fract, int x, int y)
 		else
 			ft_my_put_pixel(&fract->mini_fract1, x, y, 0x0);
 	}
-	mlx_put_image_to_window(fract->prog, fract->parent_window,
-		fract->mini_fract1.img, fract->img_size, fract->mini_fract_size * 0);
 }
 
 void	ft_draw_mfract1(t_fract *fract, int x, int y)

@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 08:57:32 by akocabas          #+#    #+#             */
-/*   Updated: 2022/07/01 09:25:35 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/07/04 09:51:28 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,42 @@ enum
 	julia = 3,
 	tricorn = 4
 };
+# ifdef __linux__
+
+enum
+{
+	key_1 = 49,
+	key_2 = 50,
+	key_3 = 51,
+	key_4 = 52,
+	key_w = 119,
+	key_r = 114,
+	key_g = 103,
+	key_b = 98,
+	key_tra = 116,
+	key_a = 97,
+	key_s = 115,
+	key_d = 100,
+	key_n = 110,
+	key_m = 109,
+	key_left = 65361,
+	key_up = 65362,
+	key_right = 65363,
+	key_down = 65364,
+	key_esc = 65307,
+	key_plus = 65451,
+	key_minus = 65453
+};
+
+enum
+{
+	left_click = 1,
+	right_click = 3,
+	middle_click = 2,
+	scroll_up = 4,
+	scroll_down = 5
+};
+# else
 
 enum
 {
@@ -37,7 +73,7 @@ enum
 	key_r = 15,
 	key_g = 5,
 	key_b = 11,
-	key_t = 17,
+	key_tra = 17,
 	key_a = 0,
 	key_s = 1,
 	key_d = 2,
@@ -60,6 +96,7 @@ enum
 	scroll_up = 5,
 	scroll_down = 4
 };
+# endif
 
 typedef struct s_complex
 {

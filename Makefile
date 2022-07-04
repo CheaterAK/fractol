@@ -6,17 +6,28 @@
 #    By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/13 10:18:18 by akocabas          #+#    #+#              #
-#    Updated: 2022/06/28 20:45:47 by akocabas         ###   ########.fr        #
+#    Updated: 2022/07/04 04:38:20 by akocabas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fractol
 NAME_BONUS = fractol_bonus
+OS = MacOS
 
-LIBMLX_DIR = ./minilibx_opengl_20191021/
+ifeq ($(OS), Linux)
+	LIBMLX_DIR = ./minilibx-linux/
+	LIBMLX = $(addprefix $(LIBMLX_DIR), libmlx_linux.a)
+	FLAGS = -lmlx -lXext -lX11
+else
+	LIBMLX_DIR = ./minilibx_opengl_20191021/
+	LIBMLX = $(addprefix $(LIBMLX_DIR), libmlx.a)
+	FLAGS = -framework OpenGL -framework AppKit
+endif
+
+
 LIBPRINTF_DIR = ./ft_printf/
-LIBMLX = $(addprefix $(LIBMLX_DIR), libmlx.a)
 LIBPRINTF =$(addprefix $(LIBPRINTF_DIR), libftprintf.a)
+
 
 SRC_DIR = ./src/
 
@@ -39,7 +50,8 @@ BSRCS = $(addprefix $(SRC_DIR), $(BSRC_FILES))
 BOBJS = $(addprefix $(OBJ_DIR), $(BOBJ_FILES))
 
 CC = gcc
-MLX_AND_FLAGS = $(LIBMLX) $(LIBPRINTF) -Wall -Wextra -Werror -framework OpenGL -framework AppKit
+MLX_AND_FLAGS = $(LIBMLX) $(LIBPRINTF) -Wall -Wextra -Werror $(FLAGS)
+
 .PHONY: all clean fclean re bonus
 
 all: $(LIBPRINTF) $(LIBMLX) $(NAME)
@@ -68,8 +80,10 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 clean:
 	@rm -f $(OBJS) $(BOBJS)
 	@rm -rf $(OBJ_DIR)
+	make -sC $(LIBPRINTF_DIR) clean
 
 fclean: clean
 	@rm -f $(NAME) $(NAME_BONUS)
+	make -sC $(LIBPRINTF_DIR) fclean
 
 re: fclean $(NAME)
