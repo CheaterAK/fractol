@@ -2,12 +2,10 @@ make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/mnt/d/fractol'
 make -sC ./ft_printf/
 make -sC ./minilibx_opengl_20191021/
- 
 mkdir -p ./obj/
 gcc -c src/algorithms.c -I ./ft_printf/ -I ./minilibx_opengl_20191021/ -D IMG_SIZE=600 -o obj/algorithms.o -g
 mkdir -p ./obj/
 gcc -c src/color.c -I ./ft_printf/ -I ./minilibx_opengl_20191021/ -D IMG_SIZE=600 -o obj/color.o -g
- 
 mkdir -p ./obj/
 gcc -c src/draw.c -I ./ft_printf/ -I ./minilibx_opengl_20191021/ -D IMG_SIZE=600 -o obj/draw.o -g
 mkdir -p ./obj/
@@ -18,6 +16,7 @@ mkdir -p ./obj/
 gcc -c src/keys.c -I ./ft_printf/ -I ./minilibx_opengl_20191021/ -D IMG_SIZE=600 -o obj/keys.o -g
 mkdir -p ./obj/
 gcc -c src/errors.c -I ./ft_printf/ -I ./minilibx_opengl_20191021/ -D IMG_SIZE=600 -o obj/errors.o -g
+ 
 mkdir -p ./obj/
 gcc -c src/main.c -I ./ft_printf/ -I ./minilibx_opengl_20191021/ -D IMG_SIZE=600 -o obj/main.o -g
 gcc ./obj/algorithms.o ./obj/color.o ./obj/draw.o ./obj/fract.o ./obj/init.o ./obj/keys.o ./obj/errors.o ./obj/main.o ./minilibx_opengl_20191021/libmlx.a ./ft_printf/libftprintf.a -Wall -Wextra -Werror -framework OpenGL -framework AppKit -o fractol

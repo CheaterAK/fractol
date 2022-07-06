@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jul  4 09:34:26 2022
+# Make data base, printed on Wed Jul  6 06:40:50 2022
 
 # Variables
 
@@ -133,7 +133,7 @@ BSRC_FILES = algorithms_bonus.c color_bonus.c draw_bonus.c drawm_bonus.c errors_
 # makefile (from 'Makefile', line 37)
 OBJ_FILES = $(SRC_FILES:.c=.o)
 # environment
-WT_SESSION = 5254e68a-7a0a-4828-8ac1-9cfaada97fe4
+WT_SESSION = fb73483d-3f14-41ce-bbec-6be35111a406
 # environment
 VSCODE_LOG_NATIVE = false
 # makefile (from 'Makefile', line 23)
@@ -183,7 +183,7 @@ _ = /mnt/c/Users/Ahmet/AppData/Local/Programs/Microsoft VS Code/bin/code
 # environment
 XDG_RUNTIME_DIR = /mnt/wslg/runtime-dir
 # environment
-VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-9963c3f9-869c-4106-a460-4955ade49657.sock
+VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-abd2f940-fe03-429c-a815-b55925121e7b.sock
 # makefile (from 'Makefile', line 22)
 LIBMLX_DIR = ./minilibx_opengl_20191021/
 # environment
@@ -218,9 +218,9 @@ CC = gcc
 # Directories
 
 # src (device 73, inode 1407374883554193): No files, no impossibilities so far.
-# . (device 73, inode 3096224743817448): 12 files, no impossibilities.
+# . (device 73, inode 3096224743817448): 14 files, no impossibilities.
 
-# 12 files, no impossibilities in 2 directories.
+# 14 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -261,7 +261,7 @@ Makefile:
 
 ft_printf/libftprintf.a:
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-04 06:08:46.5032421
+#  Last modified 2022-07-04 22:57:42.1501334
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 60):
@@ -465,12 +465,12 @@ obj/init_bonus.o:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 45 / storage = 559 B / avg = 12 B
-# current buf: size = 8162 B / used = 559 B / count = 45 / avg = 12 B
+# strcache buffers: 1 (0) / strings = 47 / storage = 574 B / avg = 12 B
+# current buf: size = 8162 B / used = 574 B / count = 47 / avg = 12 B
 
-# strcache performance: lookups = 79 / hit rate = 43%
+# strcache performance: lookups = 81 / hit rate = 41%
 # hash-table stats:
-# Load=45/8192=1%, Rehash=0, Collisions=2/79=3%
-# Finished Make data base on Mon Jul  4 09:34:26 2022
+# Load=47/8192=1%, Rehash=0, Collisions=2/81=2%
+# Finished Make data base on Wed Jul  6 06:40:50 2022
 
  
