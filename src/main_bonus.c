@@ -6,16 +6,12 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 04:21:02 by akocabas          #+#    #+#             */
-/*   Updated: 2022/07/06 06:52:13 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/07/06 06:58:34 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-* Work only on minilibx_opengl_20191021
-*/
-
-#include "./fract_bonus.h"
-#include "./mlx.h"
+#include "fract_bonus.h"
+#include "mlx.h"
 
 int	ft_destroy_it(t_fract *fract)
 {
@@ -51,5 +47,5 @@ int	main(int ac, char *av[])
 	mlx_hook(fract.parent_window, 4, (1L << 2), ft_mouse_hook, &fract);
 	mlx_hook(fract.parent_window, 17, (1L << 0), ft_destroy_it, &fract);
 	mlx_hook(fract.parent_window, 6, (1L << 6), ft_m_move, &fract);
-		mlx_loop(fract.prog);
+	mlx_loop(fract.prog);
 }

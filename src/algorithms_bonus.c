@@ -6,11 +6,11 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 04:16:20 by akocabas          #+#    #+#             */
-/*   Updated: 2022/07/04 23:01:15 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/07/06 06:54:43 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./fract_bonus.h"
+#include "fract_bonus.h"
 
 int	ft_mandelbrot(t_fract *fract, int x, int y, int scale)
 {

@@ -6,12 +6,12 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 03:46:28 by akocabas          #+#    #+#             */
-/*   Updated: 2022/07/04 04:41:01 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/07/06 12:05:33 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fract.h"
-#include "../ft_printf/ft_printf.h"
+#include "ft_printf.h"
 
 void	ft_error_message(void)
 {

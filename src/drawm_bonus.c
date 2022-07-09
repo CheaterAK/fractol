@@ -6,12 +6,12 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 06:15:42 by akocabas          #+#    #+#             */
-/*   Updated: 2022/07/04 05:03:44 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/07/06 06:56:12 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./fract_bonus.h"
-#include "./mlx.h"
+#include "fract_bonus.h"
+#include "mlx.h"
 
 void	ft_draw_mfract3_2(t_fract *fract, int x, int y)
 {

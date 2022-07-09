@@ -6,7 +6,8 @@
 		"deque": "cpp",
 		"__node_handle": "c",
 		"ft_printf.h": "c",
-		"fract_bonus.h": "c"
+		"fract_bonus.h": "c",
+		"*.tcc": "c"
 	},
 	"makefile.launchConfigurations": [
 		{

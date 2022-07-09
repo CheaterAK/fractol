@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 08:57:32 by akocabas          #+#    #+#             */
-/*   Updated: 2022/07/04 09:40:27 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/07/06 06:57:34 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FRACT_H
 
 # include <string.h>
-# include <stdio.h>
 # include <stdlib.h>
 # ifndef IMG_SIZE
 #  define IMG_SIZE (600)

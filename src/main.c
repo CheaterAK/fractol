@@ -6,16 +6,12 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 04:21:02 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/28 16:46:14 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/07/06 06:58:44 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-* Work only on minilibx_opengl_20191021
-*/
-
-#include "./fract.h"
-#include "./mlx.h"
+#include "fract.h"
+#include "mlx.h"
 
 int	ft_destroy_it(t_fract *fract)
 {

@@ -6,12 +6,12 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 08:56:17 by akocabas          #+#    #+#             */
-/*   Updated: 2022/07/04 04:58:12 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/07/06 06:57:25 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./fract.h"
-#include "./mlx.h"
+#include "fract.h"
+#include "mlx.h"
 
 void	ft_my_put_pixel(t_data *data, int x, int y, int color)
 {

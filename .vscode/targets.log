@@ -6,25 +6,25 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jul  6 06:40:50 2022
+# Make data base, printed on Wed Jul  6 18:03:09 2022
 
 # Variables
 
 # environment
 LC_ALL = C
-# makefile (from 'Makefile', line 49)
+# makefile (from 'Makefile', line 54)
 BSRCS = $(addprefix $(SRC_DIR), $(BSRC_FILES))
 # environment
 PULSE_SERVER = /mnt/wslg/PulseServer
 # environment
 WSLENV = ELECTRON_RUN_AS_NODE/w:WT_SESSION:BASH_ENV/u:WT_PROFILE_ID
-# makefile (from 'Makefile', line 32)
+# makefile (from 'Makefile', line 35)
 SRC_DIR = ./src/
 # environment
 VSCODE_CWD = /mnt/c/Users/Ahmet/AppData/Local/Programs/Microsoft VS Code
-# makefile (from 'Makefile', line 50)
+# makefile (from 'Makefile', line 55)
 BOBJS = $(addprefix $(OBJ_DIR), $(BOBJ_FILES))
-# makefile (from 'Makefile', line 28)
+# makefile (from 'Makefile', line 31)
 LIBPRINTF_DIR = ./ft_printf/
 # default
 MAKE_COMMAND := make
@@ -32,7 +32,8 @@ MAKE_COMMAND := make
 VSCODE_HANDLES_SIGPIPE = true
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
-# makefile (from 'Makefile', line 34)
+ 
+# makefile (from 'Makefile', line 37)
 OBJ_DIR = ./obj/
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
@@ -60,6 +61,8 @@ LANG = C
 .LOADED := 
 # default
 .INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
+# makefile (from 'Makefile', line 29)
+BSECURE = $(addprefix $(LIBPRINTF_DIR), ft_printf.h) $(addprefix $(SRC_DIR), fract_bonus.h)
 # makefile
 MAKEFLAGS = pqrR
 # makefile
@@ -68,12 +71,12 @@ CURDIR := /mnt/d/fractol
 VSCODE_PIPE_LOGGING = true
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
-# makefile (from 'Makefile', line 46)
+# makefile (from 'Makefile', line 51)
 SRCS = $(addprefix $(SRC_DIR), $(SRC_FILES))
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
-# makefile (from 'Makefile', line 39)
-IMG_SIZE = 600
+# makefile (from 'Makefile', line 44)
+IMG_SIZE = $(addprefix IMG_SIZE=, $(SIZE))
 # environment
 MFLAGS = -pqrR
 # default
@@ -100,7 +103,7 @@ FLAGS = -framework OpenGL -framework AppKit
 WT_PROFILE_ID = {574e775e-4f2a-5b96-ac1e-a2962a402336}
 # automatic
 *F = $(notdir $*)
-# makefile (from 'Makefile', line 29)
+# makefile (from 'Makefile', line 32)
 LIBPRINTF = $(addprefix $(LIBPRINTF_DIR), libftprintf.a)
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
@@ -110,10 +113,12 @@ P9K_TTY = old
 VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
-# makefile (from 'Makefile', line 47)
+# makefile (from 'Makefile', line 52)
 OBJS = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
 # makefile
 SHELL = /bin/sh
+# makefile (from 'Makefile', line 27)
+SECURE = $(addprefix $(LIBPRINTF_DIR), ft_printf.h) $(addprefix $(SRC_DIR), fract.h)
 # default
 MAKECMDGOALS := all
 # environment
@@ -128,14 +133,16 @@ PATH = /home/cheaterak/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f3736
 MAKEFILES := 
 # automatic
 ^F = $(notdir $^)
-# makefile (from 'Makefile', line 41)
+# makefile (from 'Makefile', line 46)
 BSRC_FILES = algorithms_bonus.c color_bonus.c draw_bonus.c drawm_bonus.c errors_bonus.c fract_bonus.c init_bonus.c keys_bonus.c main_bonus.c mousekeys_bonus.c
-# makefile (from 'Makefile', line 37)
+# makefile (from 'Makefile', line 40)
 OBJ_FILES = $(SRC_FILES:.c=.o)
 # environment
 WT_SESSION = fb73483d-3f14-41ce-bbec-6be35111a406
 # environment
 VSCODE_LOG_NATIVE = false
+# makefile (from 'Makefile', line 42)
+SIZE = 600
 # makefile (from 'Makefile', line 23)
 LIBMLX = $(addprefix $(LIBMLX_DIR), libmlx.a)
 # automatic
@@ -154,8 +161,8 @@ LESS = -R
 WSL_INTEROP = /run/WSL/8_interop
 # 'override' directive
 GNUMAKEFLAGS := 
-# makefile (from 'Makefile', line 53)
-MLX_AND_FLAGS = $(LIBMLX) $(LIBPRINTF) -Wall -Wextra -Werror $(FLAGS)
+# makefile (from 'Makefile', line 58)
+MLX_AND_FLAGS = -Wall -Wextra -Werror $(FLAGS) $(LIBMLX) $(LIBPRINTF)
 # makefile (from 'Makefile', line 15)
 OS = MacOS
 # environment
@@ -172,7 +179,7 @@ DISPLAY = :0
 USER = cheaterak
 # default
 MAKE_VERSION := 4.3
-# makefile (from 'Makefile', line 36)
+# makefile (from 'Makefile', line 39)
 SRC_FILES = algorithms.c color.c draw.c fract.c init.c keys.c errors.c main.c
 # environment
 VSCODE_EXTHOST_WILL_SEND_SOCKET = true
@@ -196,7 +203,7 @@ TERM = xterm-256color
 .RECIPEPREFIX := 
 # automatic
 <F = $(notdir $<)
-# makefile (from 'Makefile', line 44)
+# makefile (from 'Makefile', line 49)
 BOBJ_FILES = $(BSRC_FILES:.c=.o)
 # default
 SUFFIXES := 
@@ -206,10 +213,10 @@ _P9K_TTY = /dev/pts/0
 WSL_DISTRO_NAME = Ubuntu
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
-# makefile (from 'Makefile', line 52)
+# makefile (from 'Makefile', line 57)
 CC = gcc
 # variable set hash-table stats:
-# Load=99/1024=10%, Rehash=0, Collisions=3/166=2%
+# Load=102/1024=10%, Rehash=0, Collisions=3/175=2%
 
 # Pattern-specific Variable Values
 
@@ -218,16 +225,16 @@ CC = gcc
 # Directories
 
 # src (device 73, inode 1407374883554193): No files, no impossibilities so far.
-# . (device 73, inode 3096224743817448): 14 files, no impossibilities.
+# . (device 73, inode 3096224743817448): 11 files, no impossibilities.
 
-# 14 files, no impossibilities in 2 directories.
+# 11 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
 obj/%.o: src/%.c
-#  recipe to execute (from 'Makefile', line 77):
+#  recipe to execute (from 'Makefile', line 82):
 	@mkdir -p $(OBJ_DIR)
-	@$(CC) -c $^ -I $(LIBPRINTF_DIR) -I $(LIBMLX_DIR) -D IMG_SIZE=$(IMG_SIZE) -o $@ -g
+	@$(CC) -c $^ -D $(IMG_SIZE) -o $@ -g  -I $(LIBPRINTF_DIR) -I $(LIBMLX_DIR)
 
 # 1 implicit rules, 0 (0.0%) terminal.
 # Files
@@ -236,7 +243,7 @@ fractol: minilibx_opengl_20191021/libmlx.a ft_printf/libftprintf.a obj/algorithm
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 66):
+#  recipe to execute (from 'Makefile', line 71):
 	@$(CC) $(OBJS) $(MLX_AND_FLAGS) -o $(NAME)
 	@echo "fractol compiled."
 
@@ -255,16 +262,16 @@ obj/init.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-04 04:38:20.5968583
+#  Last modified 2022-07-06 18:01:20.0213557
 #  File has been updated.
 #  Successfully updated.
 
 ft_printf/libftprintf.a:
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-04 22:57:42.1501334
+#  Last modified 2022-07-06 18:02:05.3186919
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'Makefile', line 60):
+#  recipe to execute (from 'Makefile', line 65):
 	make -sC $(LIBPRINTF_DIR)
 
 # Not a target:
@@ -273,9 +280,15 @@ obj/color.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-bonus: fractol_bonus
+# Not a target:
+ft_printf/ft_printf.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-06 07:46:31.9377298
+#  File has been updated.
+#  Successfully updated.
+
+bonus: ft_printf/ft_printf.h src/fract_bonus.h fractol_bonus
 #  Phony target (prerequisite of .PHONY).
- 
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
@@ -295,9 +308,10 @@ obj/main_bonus.o:
 clean:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
+ 
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 81):
+#  recipe to execute (from 'Makefile', line 86):
 	@rm -f $(OBJS) $(BOBJS)
 	@rm -rf $(OBJ_DIR)
 	make -sC $(LIBPRINTF_DIR) clean
@@ -333,12 +347,19 @@ re: fclean fractol
 #  File has not been updated.
 
 # Not a target:
+src/fract.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-06 06:57:34.4212896
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
 .DEFAULT:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-all: ft_printf/libftprintf.a minilibx_opengl_20191021/libmlx.a fractol
+all: ft_printf/ft_printf.h src/fract.h ft_printf/libftprintf.a minilibx_opengl_20191021/libmlx.a fractol
 #  Phony target (prerequisite of .PHONY).
 #  Command line target.
 #  Implicit rule search has not been done.
@@ -353,7 +374,7 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 86):
+#  recipe to execute (from 'Makefile', line 91):
 	@rm -f $(NAME) $(NAME_BONUS)
 	make -sC $(LIBPRINTF_DIR) fclean
 
@@ -405,7 +426,7 @@ minilibx_opengl_20191021/libmlx.a:
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=6/12=50%
-#  recipe to execute (from 'Makefile', line 63):
+#  recipe to execute (from 'Makefile', line 68):
 	make -sC $(LIBMLX_DIR)
 
 # Not a target:
@@ -424,7 +445,7 @@ fractol_bonus: minilibx_opengl_20191021/libmlx.a ft_printf/libftprintf.a obj/alg
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 73):
+#  recipe to execute (from 'Makefile', line 78):
 	@$(CC) $(BOBJS) $(MLX_AND_FLAGS) -o $(NAME_BONUS) -g
 	@echo "fractol_bonus compiled."
 
@@ -447,6 +468,12 @@ obj/init_bonus.o:
 #  File has not been updated.
 
 # Not a target:
+src/fract_bonus.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 .SUFFIXES:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -458,19 +485,19 @@ obj/init_bonus.o:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=31/1024=3%, Rehash=0, Collisions=0/85=0%
+# Load=34/1024=3%, Rehash=0, Collisions=0/92=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 47 / storage = 574 B / avg = 12 B
-# current buf: size = 8162 B / used = 574 B / count = 47 / avg = 12 B
+# strcache buffers: 1 (0) / strings = 48 / storage = 611 B / avg = 12 B
+# current buf: size = 8162 B / used = 611 B / count = 48 / avg = 12 B
 
-# strcache performance: lookups = 81 / hit rate = 41%
+# strcache performance: lookups = 82 / hit rate = 41%
 # hash-table stats:
-# Load=47/8192=1%, Rehash=0, Collisions=2/81=2%
-# Finished Make data base on Wed Jul  6 06:40:50 2022
+# Load=48/8192=1%, Rehash=0, Collisions=2/82=2%
+# Finished Make data base on Wed Jul  6 18:03:09 2022
 
  

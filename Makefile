@@ -6,7 +6,7 @@
 #    By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/13 10:18:18 by akocabas          #+#    #+#              #
-#    Updated: 2022/07/04 04:38:20 by akocabas         ###   ########.fr        #
+#    Updated: 2022/07/09 12:55:17 by akocabas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,9 @@ else
 	FLAGS = -framework OpenGL -framework AppKit
 endif
 
+SECURE = $(addprefix $(LIBPRINTF_DIR), ft_printf.h) $(addprefix $(SRC_DIR), fract.h)
+
+BSECURE = $(addprefix $(LIBPRINTF_DIR), ft_printf.h) $(addprefix $(SRC_DIR), fract_bonus.h)
 
 LIBPRINTF_DIR = ./ft_printf/
 LIBPRINTF =$(addprefix $(LIBPRINTF_DIR), libftprintf.a)
@@ -36,7 +39,9 @@ OBJ_DIR = ./obj/
 SRC_FILES = algorithms.c color.c draw.c fract.c init.c keys.c errors.c main.c
 OBJ_FILES = $(SRC_FILES:.c=.o)
 
-IMG_SIZE = 600
+SIZE = 600
+
+IMG_SIZE = $(addprefix IMG_SIZE=, $(SIZE))
 
 BSRC_FILES = algorithms_bonus.c color_bonus.c draw_bonus.c drawm_bonus.c \
 			errors_bonus.c fract_bonus.c init_bonus.c keys_bonus.c \
@@ -50,11 +55,11 @@ BSRCS = $(addprefix $(SRC_DIR), $(BSRC_FILES))
 BOBJS = $(addprefix $(OBJ_DIR), $(BOBJ_FILES))
 
 CC = gcc
-MLX_AND_FLAGS = $(LIBMLX) $(LIBPRINTF) -Wall -Wextra -Werror $(FLAGS)
+MLX_AND_FLAGS = -Wall -Wextra -Werror $(FLAGS) $(LIBMLX) $(LIBPRINTF)
 
 .PHONY: all clean fclean re bonus
 
-all: $(LIBPRINTF) $(LIBMLX) $(NAME)
+all: $(SECURE) $(LIBPRINTF) $(LIBMLX) $(NAME)
 
 $(LIBPRINTF) :
 	make -sC $(LIBPRINTF_DIR)
@@ -67,7 +72,7 @@ $(NAME): $(LIBMLX) $(LIBPRINTF) $(OBJS)
 	@echo "fractol compiled."
 
 
-bonus: $(NAME_BONUS)
+bonus: $(BSECURE) $(NAME_BONUS)
 
 ${NAME_BONUS} : $(LIBMLX) $(LIBPRINTF) $(BOBJS)
 	@$(CC) $(BOBJS) $(MLX_AND_FLAGS) -o $(NAME_BONUS) -g
@@ -75,7 +80,7 @@ ${NAME_BONUS} : $(LIBMLX) $(LIBPRINTF) $(BOBJS)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(OBJ_DIR)
-	@$(CC) -c $^ -I $(LIBPRINTF_DIR) -I $(LIBMLX_DIR) -D IMG_SIZE=$(IMG_SIZE) -o $@ -g
+	@$(CC) -c $^ -D $(IMG_SIZE) -o $@ -g  -I $(LIBPRINTF_DIR) -I $(LIBMLX_DIR)
 
 clean:
 	@rm -f $(OBJS) $(BOBJS)

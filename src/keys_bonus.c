@@ -6,12 +6,12 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 04:29:26 by akocabas          #+#    #+#             */
-/*   Updated: 2022/07/04 09:46:43 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/07/06 08:30:35 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./fract_bonus.h"
-#include "./mlx.h"
+#include "fract_bonus.h"
+#include "mlx.h"
 
 void	ft_angle(t_fract *fract, int key)
 {
@@ -56,7 +56,6 @@ void	ft_reinit(t_fract *fract, int key)
 
 int	ft_keydown(int key, t_fract *fract)
 {
-	printf("%d\n", key);
 	if (key == key_left)
 		fract->mv_x -= (.1 / fract->zoom);
 	if (key == key_right)

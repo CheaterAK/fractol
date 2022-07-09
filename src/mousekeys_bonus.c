@@ -6,12 +6,12 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 11:08:00 by akocabas          #+#    #+#             */
-/*   Updated: 2022/07/04 09:46:48 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/07/06 08:30:44 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./fract_bonus.h"
-#include"./mlx.h"
+#include "fract_bonus.h"
+#include "mlx.h"
 
 void	ft_mzoom(t_fract *fract, int key, int y, int x)
 {
@@ -46,7 +46,6 @@ int	ft_m_move(int x, int y, t_fract *fract)
 
 int	ft_mouse_hook(int key, int x, int y, t_fract *fract)
 {
-	printf("%d\n", key);
 	if (key == scroll_down || key == scroll_up)
 	{
 		ft_mzoom(fract, key, y, x);
