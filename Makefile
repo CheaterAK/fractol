@@ -6,7 +6,7 @@
 #    By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/13 10:18:18 by akocabas          #+#    #+#              #
-#    Updated: 2022/07/25 12:43:43 by akocabas         ###   ########.fr        #
+#    Updated: 2022/07/25 13:23:28 by akocabas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,7 +89,7 @@ clean:
 	@echo Obj files cleaned.
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f $(NAME) $(NAME_BONUS)
 	@make -sC $(LIBPRINTF_DIR) fclean
 	@echo Program deleted.
 
