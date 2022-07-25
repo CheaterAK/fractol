@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 08:57:32 by akocabas          #+#    #+#             */
-/*   Updated: 2022/07/06 08:43:38 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/07/25 13:21:31 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,4 +172,5 @@ void			ft_invalid_fract(void);
 void			ft_julia_preset(char preset, t_fract *fract);
 int				ft_destroy_it(t_fract *fract);
 void			ft_help(void);
+int				ft_strncmp(const char *s1, const char *s2, size_t n);
 #endif

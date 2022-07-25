@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 11:05:50 by akocabas          #+#    #+#             */
-/*   Updated: 2022/07/06 08:43:00 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/07/25 13:20:34 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ void	color_init(t_fract *fract)
 
 void	ft_fract_init2(char *fract_name, t_fract *fract)
 {
-	if (!strcmp(fract_name, "help"))
+	if (!strncmp(fract_name, "help", 5))
 		ft_help();
-	else if (!strcmp(fract_name, "Tricorn"))
+	else if (!strncmp(fract_name, "Tricorn", 8))
 	{
 		fract->angle = 0;
 		fract->max_iteration = 100;
@@ -65,7 +65,7 @@ void	ft_fract_init2(char *fract_name, t_fract *fract)
 		fract->fract_type = tricorn;
 		fract->error = 0;
 	}
-	else if (!strcmp(fract_name, "Julia"))
+	else if (!strncmp(fract_name, "Julia", 6))
 	{
 		fract->angle = 0;
 		fract->max_iteration = 100;
@@ -85,7 +85,7 @@ void	ft_fract_init(char *fract_name, t_fract *fract)
 	color_init(fract);
 	fract->color_shift = 0;
 	fract->error = 1;
-	if (!strcmp(fract_name, "Mandelbrot"))
+	if (!strncmp(fract_name, "Mandelbrot", 11))
 	{
 		fract->max_iteration = 150;
 		fract->mv_x = 0;
@@ -95,7 +95,7 @@ void	ft_fract_init(char *fract_name, t_fract *fract)
 		fract->angle = 0;
 		fract->error = 0;
 	}
-	else if (!strcmp(fract_name, "Burningship"))
+	else if (!strncmp(fract_name, "Burningship", 12))
 	{
 		fract->angle = 0;
 		fract->max_iteration = 100;

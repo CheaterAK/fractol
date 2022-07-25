@@ -6,7 +6,7 @@
 #    By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/13 10:18:18 by akocabas          #+#    #+#              #
-#    Updated: 2022/07/09 12:55:17 by akocabas         ###   ########.fr        #
+#    Updated: 2022/07/25 12:43:43 by akocabas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,10 +85,12 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 clean:
 	@rm -f $(OBJS) $(BOBJS)
 	@rm -rf $(OBJ_DIR)
-	make -sC $(LIBPRINTF_DIR) clean
+	@make -sC $(LIBPRINTF_DIR) clean
+	@echo Obj files cleaned.
 
 fclean: clean
-	@rm -f $(NAME) $(NAME_BONUS)
-	make -sC $(LIBPRINTF_DIR) fclean
+	@rm -f $(NAME)
+	@make -sC $(LIBPRINTF_DIR) fclean
+	@echo Program deleted.
 
 re: fclean $(NAME)

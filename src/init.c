@@ -6,18 +6,32 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 11:05:50 by akocabas          #+#    #+#             */
-/*   Updated: 2022/07/06 06:57:49 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/07/25 13:18:19 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fract.h"
 #include "mlx.h"
 
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < n && (s1[i] || s2[i]))
+	{
+		if ((unsigned char)s1[i] != (unsigned char)s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		i++;
+	}
+	return (0);
+}
+
 void	ft_fract_init(char *fract_name, t_fract *fract)
 {
-	if (!strcmp(fract_name, "help"))
+	if (!strncmp(fract_name, "help", 5))
 		ft_help();
-	else if (!strcmp(fract_name, "Mandelbrot"))
+	else if (!strncmp(fract_name, "Mandelbrot", 11))
 	{
 		fract->max_iteration = 150;
 		fract->mv_x = 0;
@@ -25,7 +39,7 @@ void	ft_fract_init(char *fract_name, t_fract *fract)
 		fract->zoom = 1;
 		fract->fract_type = mandelbrot;
 	}
-	else if (!strcmp(fract_name, "Julia"))
+	else if (!strncmp(fract_name, "Julia", 6))
 	{
 		fract->max_iteration = 100;
 		fract->mv_x = 0;
