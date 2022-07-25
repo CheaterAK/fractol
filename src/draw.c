@@ -6,11 +6,11 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 08:58:06 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/28 08:14:06 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/07/06 06:55:56 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./fract.h"
+#include "fract.h"
 
 void	ft_draw_fract(t_fract *fract, int x, int y, int iter)
 {

@@ -6,12 +6,12 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 11:08:00 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/28 21:17:32 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/07/06 08:30:44 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./fract_bonus.h"
-#include"./mlx.h"
+#include "fract_bonus.h"
+#include "mlx.h"
 
 void	ft_mzoom(t_fract *fract, int key, int y, int x)
 {
@@ -54,7 +54,7 @@ int	ft_mouse_hook(int key, int x, int y, t_fract *fract)
 		if (fract->color_shift++ == 2)
 			fract->color_shift = 0;
 	if (key == right_click)
-		fract->key_flag = fract->key_flag ^ 1;
+		fract->key_flag ^= 1;
 	ft_chk_px(fract);
 	return (0);
 }

@@ -6,11 +6,11 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 08:58:10 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/28 22:20:07 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/07/06 06:55:39 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./fract.h"
+#include "fract.h"
 
 int	ft_color(int r, int g, int b)
 {

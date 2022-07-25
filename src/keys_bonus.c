@@ -6,12 +6,12 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 04:29:26 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/28 21:05:47 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/07/06 08:30:35 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./fract_bonus.h"
-#include "./mlx.h"
+#include "fract_bonus.h"
+#include "mlx.h"
 
 void	ft_angle(t_fract *fract, int key)
 {
@@ -76,7 +76,7 @@ int	ft_keydown(int key, t_fract *fract)
 		fract->max_iteration--;
 	if (key == key_w || key == key_s || key == key_a || key == key_d)
 		ft_angle(fract, key);
-	if (key == key_r || key == key_g || key == key_b || key == key_t)
+	if (key == key_r || key == key_g || key == key_b || key == key_tra)
 		ft_color_init(fract, key);
 	ft_chk_px(fract);
 	return (0);

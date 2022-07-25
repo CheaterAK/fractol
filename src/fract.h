@@ -6,7 +6,7 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 08:57:32 by akocabas          #+#    #+#             */
-/*   Updated: 2022/07/01 06:25:59 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/07/06 06:57:34 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FRACT_H
 
 # include <string.h>
-# include <stdio.h>
 # include <stdlib.h>
 # ifndef IMG_SIZE
 #  define IMG_SIZE (600)
@@ -34,7 +33,7 @@ enum {
 	key_r = 15,
 	key_g = 5,
 	key_b = 11,
-	key_t = 17,
+	key_tt = 17,
 	key_a = 0,
 	key_s = 1,
 	key_d = 2,
@@ -110,7 +109,5 @@ void	ft_invalid_fract(void);
 void	ft_julia_preset(char preset, t_fract *fract);
 int		ft_destroy_it(t_fract *fract);
 void	ft_help(void);
-
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 #endif

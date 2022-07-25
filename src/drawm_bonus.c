@@ -6,12 +6,12 @@
 /*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 06:15:42 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/28 20:52:37 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/07/06 06:56:12 by akocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./fract_bonus.h"
-#include "./mlx.h"
+#include "fract_bonus.h"
+#include "mlx.h"
 
 void	ft_draw_mfract3_2(t_fract *fract, int x, int y)
 {
@@ -35,8 +35,6 @@ void	ft_draw_mfract3_2(t_fract *fract, int x, int y)
 		else
 			ft_my_put_pixel(&fract->mini_fract3, x, y, 0x0);
 	}
-	mlx_put_image_to_window(fract->prog, fract->parent_window,
-		fract->mini_fract3.img, fract->img_size, fract->mini_fract_size * 2);
 }
 
 void	ft_draw_mfract3(t_fract *fract, int x, int y)
@@ -86,8 +84,6 @@ void	ft_draw_mfract2_2(t_fract *fract, int x, int y)
 		else
 			ft_my_put_pixel(&fract->mini_fract2, x, y, 0x0);
 	}
-	mlx_put_image_to_window(fract->prog, fract->parent_window,
-		fract->mini_fract2.img, fract->img_size, fract->mini_fract_size * 1);
 }
 
 void	ft_draw_mfract2(t_fract *fract, int x, int y)
