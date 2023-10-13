@@ -16,7 +16,7 @@ OS = MacOS
 
 ifeq ($(OS), Linux)
 	LIBMLX_DIR = ./minilibx-linux/
-	LIBMLX = $(addprefix $(LIBMLX_DIR), libmlx_linux.a)
+	LIBMLX = $(addprefix $(LIBMLX_DIR), libmlx.a)
 	FLAGS = -lmlx -lXext -lX11
 else
 	LIBMLX_DIR = ./minilibx_opengl_20191021/
@@ -55,11 +55,11 @@ BSRCS = $(addprefix $(SRC_DIR), $(BSRC_FILES))
 BOBJS = $(addprefix $(OBJ_DIR), $(BOBJ_FILES))
 
 CC = gcc
-MLX_AND_FLAGS = -Wall -Wextra -Werror $(FLAGS) $(LIBMLX) $(LIBPRINTF)
+MLX_AND_FLAGS = -Wall -Wextra -Werror -O3 $(FLAGS) $(LIBMLX) $(LIBPRINTF)
 
 .PHONY: all clean fclean re bonus
 
-all: $(SECURE) $(LIBPRINTF) $(LIBMLX) $(NAME)
+all: $(SECURE) $(LIBPRINTF) $(NAME)
 
 $(LIBPRINTF) :
 	make -sC $(LIBPRINTF_DIR)
